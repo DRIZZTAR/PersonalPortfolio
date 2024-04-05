@@ -1,6 +1,5 @@
 import "../globals.css";
-import { Inter } from "next/font/google";
-import LocalFont from "@next/font/local";
+import { Inter, Questrial } from "next/font/google";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 
@@ -49,7 +48,17 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const questrial = Questrial({
+  subsets: ["latin"],
+  variable: "--font-questrial",
+  weight: "400",
+});
 
+  
+// const calSans = LocalFont({
+//   src: "./fonts/CalSans-SemiBold",
+//   variable: "--font-calsans",
+// });
 
 export default function RootLayout({
   children,
@@ -57,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable].join(" ")}>
+    <html lang="en" className={[inter.variable, questrial.variable].join(" ")}>
       <head>
         <Analytics />
       </head>

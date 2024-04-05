@@ -9,7 +9,7 @@ const navigation = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-tl from-zinc-900 via-zinc-300/10 to-zinc-900">
+    <div className="flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-300/10 to-black">
       <nav className="my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-4">
           {navigation.map((item) => (
@@ -49,15 +49,15 @@ export default function Home() {
           and exploring generative UX/UI.
         </h2>
         <h2 className="text-sm text-zinc-500 ">
-          Lets build together and{" "}
+          Lets build and{" "}
           <Link
             target="_blank"
             href="https://www.linkedin.com/in/tyson-skakun-tail/"
             className="underline duration-500 hover:text-zinc-300"
           >
-            Connect
+            Connect 
           </Link>{" "}
-          today 🚀
+          🚀
         </h2>
       </div>
     </div>
