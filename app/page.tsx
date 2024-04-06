@@ -23,15 +23,15 @@ export default function Home() {
           ))}
         </ul>
       </nav>
-      <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+      <div className="w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={200}
       />
-      <h1 className="z-10 pb-4 text-5xl text-transparent bg-clip-text bg-gradient-to-r from-slate-500 via-pink-300 to-cobalt-500 cursor-default animate-title font-display sm:text-7xl md:text-9xl whitespace-nowrap duration-1000 text-edge-outline">
+      <h1 className="z-10 pb-4 text-5xl text-transparent bg-clip-text bg-gradient-to-r from-slate-950 via-pink-200 to-slate-900 cursor-default animate-title font-display sm:text-7xl md:text-9xl whitespace-nowrap duration-1000 text-edge-outline">
         Tyson Skakun
       </h1>
-      <h1 className="z-10 pb-4 text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-500 via-pink-300 to-cobalt-500 cursor-default animate-title font-display sm:text-6xl md:text-7xl whitespace-nowrap duration-1000 text-edge-outline">
+      <h1 className="z-10 pb-4 text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-pink-200 to-cobalt-700 cursor-default animate-title font-display sm:text-6xl md:text-7xl whitespace-nowrap duration-1000 text-edge-outline">
         Developer
       </h1>
 
