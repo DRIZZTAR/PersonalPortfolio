@@ -14,7 +14,7 @@ export default function Chat() {
           {" "}
           {/* Adjust maxHeight as needed */}
           {messages.map((m) => (
-            <div key={m.id} className="whitespace-pre-wrap text-white">
+            <div key={m.id} className="whitespace-pre-wrap text-center text-slate-300">
               {m.role === "user" ? "User: " : "AI: "}
               {m.content}
             </div>
