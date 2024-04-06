@@ -1,37 +1,40 @@
 "use client";
 
-import { useChat, generateId } from "ai/react";
+import { useChat } from "ai/react";
 
 export default function Chat() {
-const functionCallHandler: FunctionCallHandler = async (chatMessages, functionCall) => {
-  if (functionCall.name === "get_current_weather") {
-    let parsedFunctionCallArguments;
-    try {
-      if (functionCall.arguments) {
-        parsedFunctionCallArguments = JSON.parse(functionCall.arguments);
-        console.log(parsedFunctionCallArguments);
+  const functionCallHandler: FunctionCallHandler = async (
+    chatMessages,
+    functionCall
+  ) => {
+    if (functionCall.name === "get_current_weather") {
+      let parsedFunctionCallArguments;
+      try {
+        if (functionCall.arguments) {
+          parsedFunctionCallArguments = JSON.parse(functionCall.arguments);
+          console.log(parsedFunctionCallArguments);
+        }
+      } catch (error) {
+        console.error("Failed to parse function call arguments:", error);
+        // Optionally, send an error message back to the chat
+        return {
+          messages: [
+            ...chatMessages,
+            {
+              id: generateId(),
+              name: "error",
+              role: "system",
+              content: "Sorry, we couldn't process your weather request.",
+            },
+          ],
+        };
       }
-    } catch (error) {
-      console.error("Failed to parse function call arguments:", error);
-      // Optionally, send an error message back to the chat
-      return {
-        messages: [
-          ...chatMessages,
-          {
-            id: generateId(),
-            name: "error",
-            role: "system",
-            content: "Sorry, we couldn't process your weather request.",
-          },
-        ],
-      };
-    }
 
-    // Generate a fake temperature and weather condition
-    const temperature = Math.floor(Math.random() * (100 - 30 + 1) + 30);
-    const weatherConditions = ["sunny", "cloudy", "rainy", "snowy"];
-    const weather = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
-
+      // Generate a fake temperature and weather condition
+      const temperature = Math.floor(Math.random() * (100 - 30 + 1) + 30);
+      const weatherConditions = ["sunny", "cloudy", "rainy", "snowy"];
+      const weather =
+        weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
 
       const functionResponse: ChatRequest = {
         messages: [
@@ -63,8 +66,12 @@ const functionCallHandler: FunctionCallHandler = async (chatMessages, functionCa
         >
           {messages.map((m) => (
             <div key={m.id} className="whitespace-pre-wrap p-3 text-center text-slate-300">
-              {m.role === "user" ? "User: " : "AI: "}
-              {m.content}
+              <p className="text-lg md:text-xl lg:text-2xl font-semibold text-indigo-500 dark:text-indigo-400 leading-relaxed tracking-tight shadow-lg">
+                {m.role === "user" ? "User: " : "AI: "}
+                <span className="text-slate-100 dark:text-slate-200">
+                  {m.content}
+                </span>
+              </p>
             </div>
           ))}
         </div>
