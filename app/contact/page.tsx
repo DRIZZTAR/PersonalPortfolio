@@ -48,11 +48,14 @@ export default function Example() {
                 <span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
                   {s.icon}
                 </span>{" "}
-                <div className="z-10 flex flex-col items-center">
-                  <span className="lg:text-xl font-medium duration-150 xl:text-3xl text-zinc-200 group-hover:text-white font-display">
+                <div
+                  style={{ fontFamily: "Cal Sans, sans-serif" }}
+                  className="z-10 flex flex-col items-center"
+                >
+                  <span className=" lg:text-xl hover font-medium duration-150 xl:text-3xl text-zinc-200/80 group-hover:text-black font-display">
                     {s.handle}
                   </span>
-                  <span className="mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200">
+                  <span className="mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-900">
                     {s.label}
                   </span>
                 </div>
