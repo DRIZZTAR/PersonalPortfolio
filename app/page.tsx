@@ -9,7 +9,7 @@ const navigation = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-300/10 to-black">
+    <div className="flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-r from-black via-slate-400/20 to-black">
       <nav className="my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-4">
           {navigation.map((item) => (
@@ -26,12 +26,12 @@ export default function Home() {
       <div className="w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={200}
+        quantity={300}
       />
-      <h1 className="z-10 pb-4 text-5xl text-transparent bg-clip-text bg-gradient-to-r from-slate-950 via-pink-200 to-slate-900 cursor-default animate-title font-display sm:text-7xl md:text-9xl whitespace-nowrap duration-1000 text-edge-outline">
+      <h1 className="z-10 pb-6 text-5xl text-transparent bg-clip-text bg-gradient-to-r from-slate-950/10 via-pink-400 to-slate-950/10 cursor-default animate-title font-display sm:text-7xl md:text-9xl whitespace-nowrap duration-1000 text-edge-outline">
         Tyson Skakun
       </h1>
-      <h1 className="z-10 pb-4 text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-pink-200 to-cobalt-700 cursor-default animate-title font-display sm:text-6xl md:text-7xl whitespace-nowrap duration-1000 text-edge-outline">
+      <h1 className="z-10 pb-4 text-4xl text-transparent bg-clip-text bg-gradient-to-r from-slate-900/10 via-pink-300 to-slate-950/10 cursor-default animate-title font-display sm:text-6xl md:text-7xl whitespace-nowrap duration-1000 text-edge-outline">
         Developer
       </h1>
 
