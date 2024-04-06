@@ -8,3 +8,9 @@
   }
 } 
 
+@font-face {
+    font-family: 'Cal Sans';
+    src: url('./public/fonts/CalSans-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* or the appropriate weight */
+    font-style: normal;
+}
