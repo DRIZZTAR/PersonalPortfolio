@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigation } from "../components/nav";
 import Particles from "../components/particles";
+import Chat from "../components/chat";
 
 export default async function ProjectsPage() {
   return (
@@ -17,6 +18,7 @@ export default async function ProjectsPage() {
               <p className="mt-4 text-zinc-400">
                 Some of the projects are from work and some are on my own time.
               </p>
+              <Chat />
             </div>
           </div>
         </div>
