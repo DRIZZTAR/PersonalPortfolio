@@ -32,10 +32,10 @@ export default function Home() {
       />
       <div style={{ fontFamily: "Cal Sans, sans-serif" }}>
         <h1 className="z-10 pb-6 text-5xl text-transparent bg-clip-text bg-gradient-to-r from-slate-950/10 via-pink-400 to-slate-950/10 cursor-default animate-title font-display sm:text-7xl md:text-9xl whitespace-nowrap duration-1000 text-edge-outline">
-          Tyson Skakun
+          Hello LinkedIn
         </h1>
         <h1 className="z-10 pb-4 text-4xl text-transparent text-center bg-clip-text bg-gradient-to-r from-rose-500/10 via-pink-400/50 to-slate-200/50 cursor-default animate-title font-display sm:text-6xl md:text-7xl whitespace-nowrap duration-1000 text-edge-outline">
-          Developer
+          Tyson Skakun
         </h1>
       </div>
 
