@@ -65,21 +65,52 @@ export default function Chat() {
           style={{ maxHeight: "500px", overflowY: "auto" }} // Corrected style
         >
           {messages.map((m) => (
-            <div key={m.id} className="whitespace-pre-wrap p-3 text-center text-slate-300">
-              <p className="text-lg md:text-xl lg:text-2xl font-semibold text-indigo-500 dark:text-indigo-400 leading-relaxed tracking-tight shadow-lg">
-                {m.role === "user" ? "User: " : "AI: "}
-                <span className="text-slate-100 dark:text-slate-200">
-                  {m.content}
-                </span>
-              </p>
+            <div
+              key={m.id}
+              className="whitespace-pre-wrap p-3 text-center text-slate-300"
+            >
+              {/* Check if the message is a function call */}
+              {m.role === "function" && m.function_call ? (
+                // Handle both string and object types for function_call
+                typeof m.function_call === "string" ? (
+                  // Streamed function call, not yet a valid JSON, handle as raw string
+                  m.function_call.split("\\n").map((line, index) => (
+                    <p
+                      key={index}
+                      className="text-lg md:text-xl lg:text-2xl font-semibold text-indigo-500 dark:text-indigo-400 leading-relaxed tracking-tight shadow-lg"
+                    >
+                      {line}
+                    </p>
+                  ))
+                ) : (
+                  // Valid JSON, parse and display the function call details
+                  <div>
+                    <p className="text-lg md:text-xl lg:text-2xl font-semibold text-indigo-500 dark:text-indigo-400 leading-relaxed tracking-tight shadow-lg">
+                      Function name: {m.function_call.name}
+                    </p>
+                    <p className="text-lg md:text-xl lg:text-2xl font-semibold text-indigo-500 dark:text-indigo-400 leading-relaxed tracking-tight shadow-lg">
+                      Function arguments: {m.function_call.arguments}
+                    </p>
+                  </div>
+                )
+              ) : (
+                // Regular message content
+                <p className="text-lg md:text-xl lg:text-2xl font-semibold text-indigo-500 dark:text-indigo-400 leading-relaxed tracking-tight shadow-lg">
+                  {m.role === "user" ? "You: " : "My AI: "}
+                  <span className="text-slate-100 dark:text-slate-200">
+                    {m.content}
+                  </span>
+                </p>
+              )}
             </div>
           ))}
         </div>
         <form onSubmit={handleSubmit} className="flex-none">
           <input
-            className="w-full px-2 text-center rounded-md border-gray-300 bg-gray-700 text-white placeholder-gray-400"
+            style={{ fontFamily: "Cal Sans, sans-serif" }}
+            className="w-full px-2 text-center rounded-md bg-black/0 text-white placeholder-gray-400"
             value={input}
-            placeholder="Say something..."
+            placeholder="Ask about Tyson..."
             onChange={handleInputChange}
           />
         </form>

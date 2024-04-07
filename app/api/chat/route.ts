@@ -10,7 +10,7 @@ const openai = new OpenAI({
 // Set the runtime to edge
 export const runtime = "edge";
 
-// Function definition:
+// Function definitions:
 const functions: ChatCompletionCreateParams.Function[] = [
   {
     name: "get_current_weather",
@@ -38,51 +38,20 @@ const functions: ChatCompletionCreateParams.Function[] = [
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
+    const contextMessage = {
+      role: "system",
+      content:
+        "Tyson Skakun is a kind and patient web developer with a logical mindset and a passion for frontend technologies, especially those enhancing user experience and accessibility. He loves pizza, enjoys indie music, and prefers programming in Python for its clarity and efficiency. Tyson values creativity and personalization, evident in his choice of music and projects. Outside work, he engages in hiking and photography, capturing the beauty of nature, and spends time gaming. He actively contributes to open-source projects, valuing community and collaboration. Tyson appreciates detailed, thoughtful responses that reflect his interests and values.", 
+    };
+
+
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo-0613",
     stream: true,
-    messages,
+    messages: [contextMessage, ...messages],
     functions,
   });
 
   const stream = OpenAIStream(response);
   return new StreamingTextResponse(stream);
 }
-
-const functionCallHandler: FunctionCallHandler = async (
-  chatMessages,
-  functionCall
-) => {
-  if (functionCall.name === "get_current_weather") {
-    if (functionCall.arguments) {
-      const parsedFunctionCallArguments = JSON.parse(functionCall.arguments);
-      // You now have access to the parsed arguments here (assuming the JSON was valid)
-      // If JSON is invalid, return an appropriate message to the model so that it may retry?
-      console.log(parsedFunctionCallArguments);
-    }
-
-    // Generate a fake temperature
-    const temperature = Math.floor(Math.random() * (100 - 30 + 1) + 30);
-    // Generate random weather condition
-    const weather = ["sunny", "cloudy", "rainy", "snowy"][
-      Math.floor(Math.random() * 4)
-    ];
-
-    const functionResponse: ChatRequest = {
-      messages: [
-        ...chatMessages,
-        {
-          id: generateId(),
-          name: "get_current_weather",
-          role: "function" as const,
-          content: JSON.stringify({
-            temperature,
-            weather,
-            info: "This data is randomly generated and came from a fake weather API!",
-          }),
-        },
-      ],
-    };
-    return functionResponse;
-  }
-};
