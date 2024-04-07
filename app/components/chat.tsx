@@ -1,6 +1,7 @@
 "use client";
 
 import { useChat } from "ai/react";
+import AiResponse from "./AiResponse";
 
 export default function Chat() {
   const functionCallHandler: FunctionCallHandler = async (
@@ -95,12 +96,7 @@ export default function Chat() {
                 )
               ) : (
                 // Regular message content
-                <p className="text-lg md:text-xl lg:text-2xl font-semibold text-indigo-500 dark:text-indigo-400 leading-relaxed tracking-tight shadow-lg">
-                  {m.role === "user" ? "You: " : "My AI: "}
-                  <span className="text-slate-100 dark:text-slate-200">
-                    {m.content}
-                  </span>
-                </p>
+                <AiResponse role={m.role} content={m.content} />
               )}
             </div>
           ))}
