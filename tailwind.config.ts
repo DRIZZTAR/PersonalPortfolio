@@ -41,8 +41,14 @@ module.exports = {
         title: "title 3s ease-out forwards",
         "fade-left": "fade-left 3s ease-in-out forwards",
         "fade-right": "fade-right 3s ease-in-out forwards",
+        "fade-in-chat": "fade-in-chat 1.5s ease-out forwards",
       },
       keyframes: {
+        "fade-in-chat": {
+          // New keyframe for chat message animation
+          "0%": { opacity: "0" },
+          "100%": { opacity: "100%" },
+        },
         "fade-in": {
           "0%": {
             opacity: "0%",
@@ -104,7 +110,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };

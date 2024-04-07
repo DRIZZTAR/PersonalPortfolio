@@ -3,18 +3,20 @@ export default function AiResponse({ role, content }) {
   const isUser = role === "user";
   const prefix = isUser ? "You: " : "My AI: ";
 
-  const messageStyle = isUser
-    ? // User message styles
-      "bg-blue-100/10 text-slate-300 border-l-4 border-slate-400"
-    : // AI message styles
-      "bg-green-100/10 text-green-300 border-l-4 border-green-700";
+  // Dynamic styling with gradients and animations
+  const containerStyles = `p-4 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 ${
+    isUser
+      ? "bg-gradient-to-r from-green-200 via-green-300/50 to-green-400/10 text-green-300 border-l-4 border-green-700"
+      : "bg-gradient-to-r from-purple-300 via-blue-300/50 to-blue-400/10 text-slate-300 border-l-4 border-slate-400"
+  }`;
+
+  // Enhancing text style for better readability and appearance
+  const textStyle =
+    "text-lg md:text-xl font-semibold leading-relaxed tracking-tight drop-shadow-md";
 
   return (
-    <div
-      style={{ fontFamily: "Cal Sans, sans-serif" }}
-      className={`p-2 my-2 rounded shadow ${messageStyle}`}
-    >
-      <p className="text-lg md:text-xl font-semibold leading-relaxed tracking-tight">
+    <div className={`${containerStyles} font-sans animate-fade-in-chat`}>
+      <p className={textStyle}>
         {prefix}
         <span>{content}</span>
       </p>
