@@ -49,7 +49,7 @@ export default function Example() {
                   {s.icon}
                 </span>{" "}
                 <div
-                  style={{ fontFamily: "Cal Sans, sans-serif" }}
+                  style={{ fontFamily: "Apple Garamond, sans-serif" }}
                   className="z-10 flex flex-col items-center"
                 >
                   <span className=" lg:text-xl hover font-medium duration-150 xl:text-3xl text-zinc-200/80 group-hover:text-black font-display">

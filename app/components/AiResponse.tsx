@@ -12,9 +12,15 @@ export default function AiResponse({ role, content }) {
   }`;
 
   return (
-    <div className={`${containerStyles} font-sans animate-fade-in-chat`}>
+    <div
+      style={{ fontFamily: "Apple Garamond Light, sans-serif" }}
+      className={`${containerStyles} animate-fade-in-chat text-white`}
+    >
       {isUser ? (
-        <FaAngellist color="#5F6A73" className="mr-2 text-green-500 w-6 h-6 flex-shrink-0" />
+        <FaAngellist
+          color="#5F6A73"
+          className="mr-2 text-green-500 w-6 h-6 flex-shrink-0"
+        />
       ) : (
         <GiAbstract010 className="mr-2 text-blue-500 w-6 h-6 flex-shrink-0" />
       )}

@@ -29,8 +29,21 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['"var(--font-inter)"', ...defaultTheme.fontFamily.sans],
-        display: ['"var(--font-calsans)"', '"Roboto"', '"Open Sans"'], // Added 'Roboto' and 'Open Sans'
+        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+        display: [
+          "var(--font-calsans)",
+          "var(--font-AppleGaramondLight)",
+          "var(--font-AppleGaramond)",
+          "var(--font-LemonMilk)",
+          "var(--font-LemonMilkLight)",
+          "var(--font-NexaExtraLight)",
+          "var(--font-NexaHeavy)",
+        ],
+      },
+      fontSize: {
+        '10xl': '10rem',
+        '11xl': '12rem',
+        '12xl': '14rem',
       },
       backgroundImage: {
         "gradient-radial":

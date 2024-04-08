@@ -6,18 +6,51 @@
   .text-edge-outline {
     -webkit-text-stroke: 1px rgba(255,255,255,0.3);
   }
-} 
+}
+
+@font-face {
+    font-family: 'Nexa Extra Light';
+    src: url('./public/fonts/NexaExtraLight.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nexa Heavy';
+    src: url('./public/fonts/NexaHeavy.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lemon Milk';
+    src: url('./public/fonts/LemonMilk.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lemon Milk Light';
+    src: url('./public/fonts/LemonMilkLight.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'Cal Sans';
     src: url('./public/fonts/CalSans-SemiBold.ttf') format('truetype');
-    font-weight: 500; /* or the appropriate weight */
+    font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Apple Garamond Light';
     src: url('./public/fonts/AppleGaramond-Light.ttf') format('truetype');
-    font-weight: 400; /* or the appropriate weight */
-    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Apple Garamond';
+    src: url('./public/fonts/AppleGaramond.ttf') format('truetype');
+    font-weight: 400;
 }

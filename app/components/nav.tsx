@@ -20,6 +20,7 @@ export const Navigation: React.FC = () => {
   return (
     <header ref={ref}>
       <div
+        style={{ fontFamily: "Apple Garamond, sans-serif" }}
         className={`fixed inset-x-0 top-0 z-50 backdrop-blur  duration-200 border-b  ${
           isIntersecting
             ? "bg-zinc-900/0 border-transparent"

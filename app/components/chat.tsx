@@ -80,6 +80,7 @@ export default function Chat() {
                 // Render the function call response
                 return (
                   <div
+                    style={{ fontFamily: "Apple Garamond, sans-serif" }}
                     key={m.id}
                     className="whitespace-pre-wrap p-3 text-center text-slate-300 bg-gradient-to-r from-purple-300 via-blue-300/50 to-blue-400/10 border-l-4 border-slate-400 rounded-lg shadow-lg"
                   >
@@ -89,7 +90,7 @@ export default function Chat() {
                         Temperature: {data.temperature}°
                       </p>
                     </div>
-                    <p className="text-lg">{data.weather}</p>
+                    <p className="text-lg">{data.weather.toUpperCase()}</p>
                   </div>
                 );
               } catch (e) {
@@ -115,8 +116,8 @@ export default function Chat() {
         </div>
         <form onSubmit={handleSubmit} className="flex-none">
           <input
-            style={{ fontFamily: "Cal Sans, sans-serif" }}
-            className="w-full px-2 text-center rounded-md bg-black/0 text-white placeholder-gray-400"
+            style={{ fontFamily: "Apple Garamond, sans-serif" }}
+            className="w-full px-2 text-center rounded-md bg-black/0 text-white placeholder-gray-300"
             value={input}
             placeholder="Ask about Tyson..."
             onChange={handleInputChange}
