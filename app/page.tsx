@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
+import Image from "next/image";
 
 const navigation = [
   { name: "Secret Project", href: "/projects" },
@@ -61,7 +62,7 @@ export default function Home() {
           </Link>{" "}
           and exploring generative UX/UI.
         </h2>
-        <h2 className="text-md md:text-xl animate-title text-zinc-400 ">
+        <h2 className="text-md md:text-xl animate-title text-zinc-400">
           Lets build and{" "}
           <Link
             target="_blank"
@@ -69,8 +70,15 @@ export default function Home() {
             className="underline duration-500 hover:text-zinc-300"
           >
             Connect
-          </Link>{" "}
+          </Link>
         </h2>
+        <Image
+          src="/logo.svg"
+          alt="Logo"
+          className="animate-title inline align-middle ml-2 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24" // Responsive width and height classes
+          width={1440}
+          height={1440}
+        />
       </div>
     </div>
   );
