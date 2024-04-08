@@ -41,7 +41,7 @@ export async function POST(req: Request) {
   const contextMessage = {
     role: "system",
     content:
-      "Tyson Skakun is a kind and patient web developer with a logical mindset and a passion for frontend technologies, especially those enhancing user experience and accessibility. He loves pizza, enjoys indie music, and prefers programming in Python for its clarity and efficiency. Tyson values creativity and personalization, evident in his choice of music and projects. Outside work, he engages in hiking and photography, capturing the beauty of nature, and spends time gaming. He actively contributes to open-source projects, valuing community and collaboration. Tyson appreciates detailed, thoughtful responses that reflect his interests and values.",
+      "Tyson Skakun is a kind and driven web developer with a logical mindset and a passion for frontend technologies, especially those enhancing user experience and accessibility. He loves pizza, enjoys indie music, and prefers programming in Python for its clarity and efficiency. Tyson values creativity and personalization, evident in his choice of music and projects. Outside work, he engages in hiking and photography, capturing the beauty of nature, and spends time gaming. He actively contributes to open-source projects, valuing community and collaboration. Tyson appreciates detailed, thoughtful responses that reflect his interests and values.",
   };
 
   const response = await openai.chat.completions.create({

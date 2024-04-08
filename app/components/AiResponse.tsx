@@ -5,16 +5,16 @@ import { FaAngellist } from "react-icons/fa";
 export default function AiResponse({ role, content }) {
   // Determine the styles based on the role
   const isUser = role === "user";
-  const containerStyles = `p-3 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 flex items-center ${
+  const containerStyles = `p-3 m-4 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 flex text-center items-center ${
     isUser
       ? "bg-gradient-to-r from-green-200 via-green-300/50 to-green-400/10 text-green-300 border-l-4 border-green-700"
-      : "bg-gradient-to-r from-purple-300 via-blue-300/50 to-blue-400/10 text-slate-300 border-l-4 border-slate-400"
+      : " text-slate-300 border-l-4 border-slate-400"
   }`;
 
   return (
     <div className={`${containerStyles} font-sans animate-fade-in-chat`}>
       {isUser ? (
-        <FaAngellist color="#FFF9C4" className="mr-2 text-green-500 w-6 h-6 flex-shrink-0" />
+        <FaAngellist color="#5F6A73" className="mr-2 text-green-500 w-6 h-6 flex-shrink-0" />
       ) : (
         <GiAbstract010 className="mr-2 text-blue-500 w-6 h-6 flex-shrink-0" />
       )}
