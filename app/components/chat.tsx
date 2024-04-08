@@ -64,8 +64,8 @@ export default function Chat() {
       <div className="flex flex-col w-full max-w-xl mx-auto overflow-hidden rounded-lg shadow">
         {/* Chat UI rendering logic remains unchanged */}
         <div
-          className="px-4 py-2 overflow-y-auto text-3xl font-bold tracking-tight text-zinc-100 sm:text-2xl"
-          style={{ maxHeight: "500px", overflowY: "auto" }}
+          className="px-2 py-2 overflow-y-auto text-3xl font-bold tracking-tight text-zinc-100 sm:text-2xl"
+          style={{ maxHeight: "600px", overflowY: "auto" }}
         >
           {messages.map((m) => {
             console.log("Rendering message details:", m);
