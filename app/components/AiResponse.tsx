@@ -25,7 +25,7 @@ export default function AiResponse({ role, content }) {
         <GiAbstract010 className="mr-2 text-blue-500 w-6 h-6 flex-shrink-0" />
       )}
       <div className="flex-grow">
-        <span className="text-lg md:text-xl font-semibold leading-relaxed tracking-tight drop-shadow-md">
+        <span className="text-lg md:text-xl font-semibold leading-relaxed tracking-wide drop-shadow-md">
           {content}
         </span>
       </div>
