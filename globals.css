@@ -65,12 +65,13 @@
 }
 
 .flex-grow::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2); /* or any color with reduced opacity */
-  border-radius: 4px; /* or any desired border radius */
+  background: linear-gradient(180deg, rgba(141, 253, 253, 0.11), transparent); /* Fading effect */
+  border-radius: 4px;
 }
-
+ 
 /* For Mozilla browsers */
 .flex-grow {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-color: rgba(141, 253, 253, 0.11) transparent;
 }
+
