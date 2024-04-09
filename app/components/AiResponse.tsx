@@ -1,14 +1,19 @@
-import React from "react";
+import { FC } from "react"; // Import the FC (Function Component) type
 import { Gi3DGlasses, GiAbstract010 } from "react-icons/gi";
 import { FaAngellist } from "react-icons/fa";
+// Define the AiResponse component
+interface AiResponseProps {
+  role: string;
+  content: string;
+}
 
-export default function AiResponse({ role, content }) {
+const AiResponse: FC<AiResponseProps> = ({ role, content }) => {
   // Determine the styles based on the role
   const isUser = role === "user";
   const containerStyles = `p-3 m-4 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 flex text-center items-center ${
     isUser
       ? "bg-gradient-to-r from-green-200 via-green-300/50 to-green-400/10 text-green-300 border-l-4 border-green-700"
-      : " text-slate-300 border-l-4 border-slate-400"
+      : "text-slate-300 border-l-4 border-slate-400"
   }`;
 
   return (
@@ -31,4 +36,6 @@ export default function AiResponse({ role, content }) {
       </div>
     </div>
   );
-}
+};
+
+export default AiResponse;
