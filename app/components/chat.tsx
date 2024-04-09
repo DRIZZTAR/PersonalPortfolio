@@ -7,15 +7,15 @@ import { WiDaySunny, WiCloudy, WiRain, WiSnow } from "react-icons/wi";
 // Define a function to map weather conditions to icons
 const getWeatherIcon = (weather) => {
   const iconSize = 30; // Adjust size as needed
-  const style = { marginRight: '10px' };
+  const style = { marginRight: "10px" };
   switch (weather.toLowerCase()) {
-    case 'sunny':
+    case "sunny":
       return <WiDaySunny size={iconSize} style={style} />;
-    case 'cloudy':
+    case "cloudy":
       return <WiCloudy size={iconSize} style={style} />;
-    case 'rainy':
+    case "rainy":
       return <WiRain size={iconSize} style={style} />;
-    case 'snowy':
+    case "snowy":
       return <WiSnow size={iconSize} style={style} />;
     default:
       return null; // Default case if the weather condition doesn't match
@@ -43,7 +43,7 @@ export default function Chat() {
         messages: [
           ...chatMessages,
           {
-           // Assuming generateId() is a utility function you have defined elsewhere
+            // Assuming generateId() is a utility function you have defined elsewhere
             name: "get_current_weather",
             role: "function",
             content: JSON.stringify(weatherData), // Make sure to stringify the entire object
@@ -117,9 +117,9 @@ export default function Chat() {
         <form onSubmit={handleSubmit} className="flex-none">
           <input
             style={{ fontFamily: "Apple Garamond, sans-serif" }}
-            className="w-full px-2 text-center rounded-md bg-black/0 text-white placeholder-gray-300"
+            className="w-full px-2 text-center rounded-md bg-black/20 text-white placeholder-gray-300"
             value={input}
-            placeholder="Ask about Tyson..."
+            placeholder="Ask me about Tyson..."
             onChange={handleInputChange}
           />
         </form>
