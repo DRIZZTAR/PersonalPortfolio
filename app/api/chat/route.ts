@@ -2,6 +2,52 @@ import { OpenAIStream, StreamingTextResponse } from "ai";
 import OpenAI from "openai";
 // import type { ChatCompletionCreateParams } from "openai/resources/chat";
 
+interface MusicPreference {
+  albums: string[];
+  songs: string[];
+  reasonHeLikes: string;
+}
+
+interface FavouriteMusic {
+  [key: string]: MusicPreference;
+}
+
+interface Profile {
+  personal: {
+    name: string;
+    characteristics: string[];
+    hobbies: string[];
+    likes: string[];
+    dislikes: string[];
+  };
+  favouriteMusic: FavouriteMusic;
+  familyMembers: {
+    parents: string[];
+    siblings: string[];
+    wife: string[];
+    babyBoy: string[];
+    inLaws: string[];
+    brotherInLaw: string[];
+  };
+  pets: string[];
+  professional: {
+    occupation: string;
+    skills: string[];
+    knownProgrammingLanguages: string[];
+    knownTechnologies: string[];
+    values: string[];
+    areasForGrowth: string[];
+  };
+  contributions: {
+    openSource: boolean;
+    areasOfInterest: string[];
+  };
+  career: {
+    careerGoals: string[];
+    currentFocus: string;
+  };
+}
+
 const tysonProfile = {
   personal: {
     name: "Tyson Skakun",
@@ -141,72 +187,73 @@ export async function POST(req: Request) {
 
   // Ensure there's a user query in the messages to form the context properly
   const userQuery =
-    messages.find((message) => message.role === "user")?.content ||
+    messages.find((message: any) => message.role === "user")?.content ||
     "Hope to respond to, and asnwer questions about tyson";
+    
+  const serializeProfileForAIContext = (profile: Profile): string => {
+    // Helper function to convert arrays into human-readable strings
+    const arrayToReadableList = (array: string[]): string => {
+      return array.length > 1
+        ? `${array.slice(0, -1).join(", ")} and ${array[array.length - 1]}`
+        : array[0];
+    };
 
-const serializeProfileForAIContext = (profile) => {
-  // Helper function to convert arrays into human-readable strings
-  const arrayToReadableList = (array) => {
-    return array.length > 1
-      ? `${array.slice(0, -1).join(", ")} and ${array[array.length - 1]}`
-      : array[0];
-  };
+    // Assuming the structure of MusicPreference and FavouriteMusic
+    const serializeMusicPreferences = (music: FavouriteMusic): string => {
+      return Object.entries(music)
+        .map(([key, value]) => {
+          return `${key} for their albums ${arrayToReadableList(
+            value.albums
+          )} and songs like ${arrayToReadableList(
+            value.songs
+          )}. Reason for liking: ${value.reasonHeLikes}.`;
+        })
+        .join(" ");
+    };
 
-  const serializeMusicPreferences = (music) => {
-    return Object.entries(music)
-      .map(([key, value]) => {
-        return `${key} for their albums ${arrayToReadableList(
-          value.albums
-        )} and songs like ${arrayToReadableList(
-          value.songs
-        )}. Reason for liking: ${value.reasonHeLikes}.`;
-      })
-      .join(" ");
-  };
-
-  const serializedProfile = `
+    const serializedProfile = `
     Tyson Skakun is ${arrayToReadableList(
       profile.personal.characteristics
     )} with hobbies like ${arrayToReadableList(
-    profile.personal.hobbies
-  )}. He enjoys ${arrayToReadableList(
-    profile.personal.likes
-  )} but dislikes ${arrayToReadableList(
-    profile.personal.dislikes
-  )}. In his family, there are his parents ${arrayToReadableList(
-    profile.familyMembers.parents
-  )}, sibling ${arrayToReadableList(
-    profile.familyMembers.siblings
-  )}, wife Kaitlyn, son Miles, in-laws ${arrayToReadableList(
-    profile.familyMembers.inLaws
-  )}, and brother-in-law ${
-    profile.familyMembers.brotherInLaw
-  }. His beloved pet is Simon, a 6-year-old yellow labrador.
+      profile.personal.hobbies
+    )}. He enjoys ${arrayToReadableList(
+      profile.personal.likes
+    )} but dislikes ${arrayToReadableList(
+      profile.personal.dislikes
+    )}. In his family, there are his parents ${arrayToReadableList(
+      profile.familyMembers.parents
+    )}, sibling ${arrayToReadableList(
+      profile.familyMembers.siblings
+    )}, wife Kaitlyn, son Miles, in-laws ${arrayToReadableList(
+      profile.familyMembers.inLaws
+    )}, and brother-in-law ${
+      profile.familyMembers.brotherInLaw
+    }. His beloved pet is Simon, a 6-year-old yellow labrador.
 
     Professionally, he is a ${
       profile.professional.occupation
     } skilled in ${arrayToReadableList(
-    profile.professional.skills
-  )}, knowledgeable in languages like ${arrayToReadableList(
-    profile.professional.knownProgrammingLanguages
-  )}, and technologies such as ${arrayToReadableList(
-    profile.professional.knownTechnologies
-  )}. Tyson upholds values like ${arrayToReadableList(
-    profile.professional.values
-  )} and aims to improve at ${arrayToReadableList(
-    profile.professional.areasForGrowth
-  )}.
+      profile.professional.skills
+    )}, knowledgeable in languages like ${arrayToReadableList(
+      profile.professional.knownProgrammingLanguages
+    )}, and technologies such as ${arrayToReadableList(
+      profile.professional.knownTechnologies
+    )}. Tyson upholds values like ${arrayToReadableList(
+      profile.professional.values
+    )} and aims to improve at ${arrayToReadableList(
+      profile.professional.areasForGrowth
+    )}.
 
     He supports open source and is keen on ${arrayToReadableList(
       profile.contributions.areasOfInterest
     )}. His career ambitions include ${arrayToReadableList(
-    profile.career.careerGoals
-  )}, with a current focus on his project at www.tail-adventures.com. His musical tastes include ${serializeMusicPreferences(
-    profile.favouriteMusic
-  )}.
+      profile.career.careerGoals
+    )}, with a current focus on his project at www.tail-adventures.com. His musical tastes include ${serializeMusicPreferences(
+      profile.favouriteMusic
+    )}.
   `;
-  return serializedProfile.trim(); // Trimming to ensure there are no leading/trailing whitespaces
-};
+    return serializedProfile.trim(); // Trimming to ensure there are no leading/trailing whitespaces
+  };
 
 const tysonAIContext = serializeProfileForAIContext(tysonProfile);
 
