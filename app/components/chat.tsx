@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useRef, useEffect } from "react";
 import { useChat } from "ai/react";
 import AiResponse from "./AiResponse";
 import { WiDaySunny, WiCloudy, WiRain, WiSnow } from "react-icons/wi";
@@ -55,68 +56,78 @@ export default function Chat() {
   };
 
   // useChat hook and other component logic remain largely unchanged
+
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     experimental_onFunctionCall: functionCallHandler,
   });
 
+  const messagesEndRef = useRef(null); // Create a ref for the last message
+
+  useEffect(() => {
+    // Automatically scroll to the latest message
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]); // Dependency array includes messages, so this runs every time messages update
+
   return (
-    <div className="flex flex-col w-full max-w-xl py-4 mx-auto stretch">
-      <div className="flex flex-col w-full max-w-xl mx-auto overflow-hidden rounded-lg shadow">
-        {/* Chat UI rendering logic remains unchanged */}
+    <div className="flex flex-col w-full max-w-xl py-4 mx-auto h-screen">
+      <div className="flex flex-col w-full max-w-xl mx-auto overflow-hidden rounded-lg shadow flex-grow">
         <div
-          className="px-2 py-2 overflow-y-auto text-3xl font-bold tracking-tight text-zinc-100 sm:text-2xl"
-          style={{ maxHeight: "600px", overflowY: "auto" }}
+          className="flex-grow flex flex-col justify-center"
+          style={{ maxHeight: "calc(100vh - 60px)", overflowY: "auto" }}
         >
-          {messages.map((m) => {
-            console.log("Rendering message details:", m);
+          <div className="px-2 py-2 overflow-y-auto text-3xl font-bold tracking-tight text-zinc-100 sm:text-2xl">
+            {messages.map((m) => {
+              console.log("Rendering message details:", m);
 
-            // Check if the message is a function call response
-            if (m.role === "function") {
-              try {
-                // Parse the function response content
-                const data = JSON.parse(m.content);
-                console.log("Parsed function content:", data);
+              // Check if the message is a function call response
+              if (m.role === "function") {
+                try {
+                  // Parse the function response content
+                  const data = JSON.parse(m.content);
+                  console.log("Parsed function content:", data);
 
-                // Render the function call response
-                return (
-                  <div
-                    style={{ fontFamily: "Apple Garamond, sans-serif" }}
-                    key={m.id}
-                    className="whitespace-pre-wrap p-3 text-center text-slate-300 bg-gradient-to-r from-purple-300 via-blue-300/50 to-blue-400/10 border-l-4 border-slate-400 rounded-lg shadow-lg"
-                  >
-                    <div className="flex justify-center items-center">
-                      {getWeatherIcon(data.weather)}
-                      <p className="text-xl font-semibold">
-                        Temperature: {data.temperature}°
-                      </p>
+                  // Render the function call response
+                  return (
+                    <div
+                      style={{ fontFamily: "Apple Garamond, sans-serif" }}
+                      key={m.id}
+                      className="whitespace-pre-wrap p-3 text-center text-slate-300 bg-gradient-to-r from-purple-300 via-blue-300/50 to-blue-400/10 border-l-4 border-slate-400 rounded-lg shadow-lg"
+                    >
+                      <div className="flex justify-center items-center">
+                        {getWeatherIcon(data.weather)}
+                        <p className="text-xl font-semibold">
+                          Temperature: {data.temperature}°
+                        </p>
+                      </div>
+                      <p className="text-lg">{data.weather.toUpperCase()}</p>
                     </div>
-                    <p className="text-lg">{data.weather.toUpperCase()}</p>
-                  </div>
-                );
-              } catch (e) {
-                // If parsing fails, log the error and render an error message
-                console.error("Error parsing function content:", e);
+                  );
+                } catch (e) {
+                  // If parsing fails, log the error and render an error message
+                  console.error("Error parsing function content:", e);
+                  return (
+                    <div
+                      key={m.id}
+                      className="whitespace-pre-wrap p-3 text-center text-slate-300"
+                    >
+                      There was an error rendering the weather information.
+                    </div>
+                  );
+                }
+              } else {
+                // For regular messages, just use AiResponse
+                // The key here is to make sure we don't reach this part for function call responses
                 return (
-                  <div
-                    key={m.id}
-                    className="whitespace-pre-wrap p-3 text-center text-slate-300"
-                  >
-                    There was an error rendering the weather information.
-                  </div>
+                  <AiResponse key={m.id} role={m.role} content={m.content} />
                 );
               }
-            } else {
-              // For regular messages, just use AiResponse
-              // The key here is to make sure we don't reach this part for function call responses
-              return (
-                <AiResponse key={m.id} role={m.role} content={m.content} />
-              );
-            }
-          })}
+            })}
+            <div ref={messagesEndRef} />{" "}
+            {/* This div is the anchor for auto-scrolling */}
+          </div>
         </div>
         <form onSubmit={handleSubmit} className="flex-none">
           <input
-            style={{ fontFamily: "Apple Garamond, sans-serif" }}
             className="w-full px-2 text-center rounded-md bg-black/20 text-white placeholder-gray-300"
             value={input}
             placeholder="Ask me about Tyson..."

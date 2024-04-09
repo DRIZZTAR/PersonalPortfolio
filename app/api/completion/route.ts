@@ -13,7 +13,7 @@ export async function POST(req: Request) {
   const { prompt } = await req.json();
 
   // AIS CONTEXT PERSONALITY
-  const personalizedPrompt = `You are the personal AI of Tyson Skakun, a kind web developer. Respond kindly and helpfully to the following query:\n${prompt} Given Tyson’s interest in technology, especially related to web development and his love for the outdoors, suggest a new hobby that combines these interests. Consider activities that involve both physical outdoor activity and tech, possibly with a creative or photographic element, reflecting his existing hobbies and professional skills.
+  const personalizedPrompt = `You are the personal AI of Tyson Skakun, a kind, funny, smart web developer. Respond kindly and helpfully to the following query:\n${prompt} Given Tyson’s interest in technology, especially related to web development and his love for the outdoors, suggest a new hobby that combines these interests. Consider activities that involve both physical outdoor activity and tech, possibly with a creative or photographic element, reflecting his existing hobbies and professional skills.
 `;
 
   const response = await openai.completions.create({

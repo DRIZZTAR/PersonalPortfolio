@@ -6,7 +6,7 @@ const tysonProfile = {
   personal: {
     name: "Tyson Skakun",
     characteristics: ["kind", "driven", "logical", "innovative", "creative"],
-    hobbies: ["guitar", "Art", "video games", "storytelling"],
+    hobbies: ["Guitar", "Music", "Board Games", "video games", "Reading", "Coding"],
     likes: [
       "people unafraid to make change",
       "blues music",
@@ -14,24 +14,49 @@ const tysonProfile = {
     ],
     dislikes: ["bland food", "time wasters"],
   },
+  family: {
+    parents: ["Stacey", "Geoff"],
+    siblings: ["Jordi"],
+    pets: ["Simon, a Dog who is a yellow labrador that is 6 years old"],
+  },
   professional: {
-    occupation: "web developer & entrepreneur",
+    occupation: "Full-Stack Developer",
     skills: [
       "frontend technologies",
       "user experience",
       "accessibility",
-      "story-driven game design",
+      "Creative problem solving",
       "generative user interface development",
     ],
-    preferredProgrammingLanguages: ["Python", "JavaScript"],
+    knownProgrammingLanguages: [
+      "Javascript", 
+      "Typescript", 
+      "Ruby", 
+      "Python"
+    ],
+    knownTechnologies: [
+      "React", 
+      "Next.js", 
+      "TailwindCSS", 
+      "Node.js", 
+      "Express", 
+      "Psql", 
+      "Prisma", 
+      "Vercel", 
+      "Vercel sdk 3.0", 
+      "Open Ai API", 
+      "Prompt engineering"
+    ],
     values: [
       "creativity",
-      "personalization",
+      "hard work",
       "community",
       "collaboration",
-      "innovation in storytelling",
+      "honesty in tough situations",
+      "innovation",
+
     ],
-    areasForGrowth: ["Perfectionism", "Balancing work and rest"],
+    areasForGrowth: ["Balancing work and rest"],
   },
   contributions: {
     openSource: true,
@@ -43,18 +68,15 @@ const tysonProfile = {
       "interactive storytelling",
     ],
   },
-  lookingFor: {
-    hobbies: [
-      "combines outdoors and tech",
-      "creative",
-      "photographic element",
-      "exploring interactive storytelling",
-    ],
+  career: {
     careerGoals: [
-      "lead developer role",
-      "mentor junior developers",
-      "pioneer in interactive storytelling technology",
+      "to land a job at a company that values creativity and innovation",
+      "Share the knowledge I've gained in my career, with juniors",
+      "pioneer in interactive user interfaces",
+      "build with people who dare to take risks"
     ],
+    currentFocus: "building a portfolio that showcases my skills and interests, currently building www.tail-adventures.com",
+
   },
 };
 
@@ -102,11 +124,11 @@ export async function POST(req: Request) {
 
   const contextMessage = {
     role: "system",
-    content: `You are the personal AI created by Tyson Skakun, your job is to answer questions about him, and respond in fun ways to help get him hired, now a ${
+    content: `You are the personal AI created by Tyson Skakun,  aimed at answering questions about him in one to two sentences. Your answers to questions about him, ashould be fun and find ways to help get him hired, now a ${
       tysonProfile.professional.occupation
     } with a passion for ${tysonProfile.professional.skills.join(
       ", "
-    )}. Tyson is curious about: "${userQuery}". Craft your response to not only answer his query but also to highlight how his unique combination of skills and interests, particularly in ${tysonProfile.contributions.areasOfInterest.join(
+    )}. The user wants to know about: "${userQuery}". Craft your response to not only answer the query but also to highlight how Tysons unique combination of skills and interests, particularly in ${tysonProfile.contributions.areasOfInterest.join(
       ", "
     )}, position him at the forefront of ${tysonProfile.professional.values.join(
       ", "
