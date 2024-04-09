@@ -6,7 +6,9 @@ import AiResponse from "./AiResponse";
 import { WiDaySunny, WiCloudy, WiRain, WiSnow } from "react-icons/wi";
 
 // Define a function to map weather conditions to icons
-const getWeatherIcon = (weather) => {
+
+type WeatherCondition = "sunny" | "cloudy" | "rainy" | "snowy";
+const getWeatherIcon = (weather: WeatherCondition) => {
   const iconSize = 30; // Adjust size as needed
   const style = { marginRight: "10px" };
   switch (weather.toLowerCase()) {
@@ -24,7 +26,7 @@ const getWeatherIcon = (weather) => {
 };
 
 export default function Chat() {
-  const functionCallHandler = async (chatMessages, functionCall) => {
+  const functionCallHandler = async (chatMessages: any, functionCall: any) => {
     console.log("Function call received:", functionCall.name);
     if (functionCall.name === "get_current_weather") {
       // The initial steps including argument parsing remain unchanged
@@ -61,7 +63,7 @@ export default function Chat() {
     experimental_onFunctionCall: functionCallHandler,
   });
 
-  const messagesEndRef = useRef(null); // Create a ref for the last message
+const messagesEndRef = useRef<HTMLDivElement>(null);// Create a ref for the last message
 
   useEffect(() => {
     // Automatically scroll to the latest message
