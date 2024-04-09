@@ -1,6 +1,6 @@
 import { OpenAIStream, StreamingTextResponse } from "ai";
 import OpenAI from "openai";
-import type { ChatCompletionCreateParams } from "openai/resources/chat";
+// import type { ChatCompletionCreateParams } from "openai/resources/chat";
 
 const tysonProfile = {
   personal: {
