@@ -5,18 +5,18 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "TysonSkakun.com",
-    template: "%s | TysonSkakun.com",
+    default: "TysonSkakun1.com",
+    template: "%s | TysonSkakun1.com",
   },
   description: "Co-founder and Developer of tail-adventures.com",
   openGraph: {
-    title: "TysonSkakun.com",
+    title: "TysonSkakun1.com",
     description: "Co-founder // Developer of TaiL-adventures.com",
-    url: "https://TysonSkakun.com",
-    siteName: "TysonSkakun.com",
+    url: "https://TysonSkakun1.com",
+    siteName: "TysonSkakun1.com",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://TysonSkakun1.com/webThumb.png",
         width: 1920,
         height: 1080,
       },
