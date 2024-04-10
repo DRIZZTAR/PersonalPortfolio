@@ -8,19 +8,30 @@ interface MusicPreference {
   reasonHeLikes: string;
 }
 
+interface MoviePreference {
+  reasonHeLikes: string;
+  favouriteQuotes: string[];
+}
+
+interface FavouriteMovies {
+  [key: string]: MoviePreference;
+}
+
 interface FavouriteMusic {
   [key: string]: MusicPreference;
 }
 
 interface Profile {
   personal: {
-    name: string;
+    names: string[];
+    locationsLived: string[];
     characteristics: string[];
     hobbies: string[];
     likes: string[];
     dislikes: string[];
   };
   favouriteMusic: FavouriteMusic;
+  favouriteMovies: FavouriteMovies;
   familyMembers: {
     parents: string[];
     siblings: string[];
@@ -50,7 +61,12 @@ interface Profile {
 
 const tysonProfile = {
   personal: {
-    name: "Tyson Skakun",
+    names: [
+      "Tyson Skakun",
+      "Tys is what his friends and family call him",
+      "Piiderman his current Gamertag",
+    ],
+    locationsLived: ["Currently living in Edmonton, Alberta, Canada"],
     characteristics: ["kind", "driven", "logical", "innovative", "creative"],
     hobbies: [
       "Guitar",
@@ -65,13 +81,14 @@ const tysonProfile = {
       "blues music",
       "being afraid and trying anyways",
     ],
-    dislikes: ["bland food", "time wasters", ],
+    dislikes: ["bland food", "time wasters"],
   },
   favouriteMusic: {
     redHotCHiliPeppers: {
       albums: ["Californication", "By The Way", "Stadium Arcadium"],
       songs: ["Scar Tissue", "Under The Bridge", "Can't Stop"],
-      reasonHeLikes: "The energy and emotion in their music, flea is a beast on the bass",
+      reasonHeLikes:
+        "The energy and emotion in their music, flea is a beast on the bass",
     },
     ledZeppelin: {
       albums: ["Led Zeppelin IV", "Physical Graffiti"],
@@ -84,12 +101,27 @@ const tysonProfile = {
       reasonHeLikes: "The creativity and the way they changed music",
     },
   },
+  favouriteMovies: {
+    theMatrix: {
+      reasonHeLikes: "The way it makes you think about reality",
+      favouriteQuotes: [ "There is no spoon", "I know kung fu" ],
+    },
+    inception: {
+      reasonHeLikes: "The way it plays with your mind",
+      favouriteQuotes: [ "You mustn't be afraid to dream a little bigger, darling", "Dreams feel real while we're in them" ],
+    },
+    theDarkKnight: {
+      reasonHeLikes: "The way it shows the struggle between good and evil",
+      favouriteQuotes: [ "You either die a hero, or you live long enough to see yourself become the villain" ],
+    },
+  },
+
   familyMembers: {
     parents: ["Stacey", "Geoff"],
     siblings: ["Jordi"],
-    wife: ["Kaitlyn"],
+    wife: ["Katelyn"],
     babyBoy: ["Miles"],
-    inLaws: ["Shari", "Bernie"],
+    inLaws: ["Sherri", "Bernie, retired, loving grandfather to Miles"],
     brotherInLaw: ["Jaimie"],
   },
   pets: ["Simon, a Dog who is a yellow labrador that is 6 years old"],
@@ -133,7 +165,7 @@ const tysonProfile = {
       "environmental sustainability",
       "AI",
       "generative UI",
-      "interactive storytelling",
+      "UX/UI design",
     ],
   },
   career: {
@@ -147,7 +179,6 @@ const tysonProfile = {
       "building a portfolio that showcases my skills and interests, currently building www.tail-adventures.com",
   },
 };
-
 
 // Create an OpenAI API client (that's edge friendly!)
 const openai = new OpenAI({
@@ -181,7 +212,7 @@ export const runtime = "edge";
 //   },
 // ];
 
-// And use it like this:
+// Handle the POST request for the completion route
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
@@ -189,7 +220,8 @@ export async function POST(req: Request) {
   const userQuery =
     messages.find((message: any) => message.role === "user")?.content ||
     "Hope to respond to, and asnwer questions about tyson";
-    
+
+  // Helper function to serialize the profile for the AI context
   const serializeProfileForAIContext = (profile: Profile): string => {
     // Helper function to convert arrays into human-readable strings
     const arrayToReadableList = (array: string[]): string => {
@@ -198,7 +230,7 @@ export async function POST(req: Request) {
         : array[0];
     };
 
-    // Assuming the structure of MusicPreference and FavouriteMusic
+    // Helper function to serialize music preferences
     const serializeMusicPreferences = (music: FavouriteMusic): string => {
       return Object.entries(music)
         .map(([key, value]) => {
@@ -211,8 +243,21 @@ export async function POST(req: Request) {
         .join(" ");
     };
 
+    const serializeMoviePreferences = (movies: FavouriteMovies): string => {
+      return Object.entries(movies)
+        .map(([key, value]) => {
+          return `${key} for the reason ${value.reasonHeLikes} and quotes like ${arrayToReadableList(
+            value.favouriteQuotes
+          )}.`;
+        })
+        .join(" ");
+    }
+
+    // Serialize the profile into a readable format for the AI context
     const serializedProfile = `
-    Tyson Skakun is ${arrayToReadableList(
+    ${arrayToReadableList(profile.personal.names)}, lives ${arrayToReadableList(
+      profile.personal.locationsLived
+    )} has these qualities ${arrayToReadableList(
       profile.personal.characteristics
     )} with hobbies like ${arrayToReadableList(
       profile.personal.hobbies
@@ -250,17 +295,18 @@ export async function POST(req: Request) {
       profile.career.careerGoals
     )}, with a current focus on his project at www.tail-adventures.com. His musical tastes include ${serializeMusicPreferences(
       profile.favouriteMusic
-    )}.
+    )}. His favourite movies are ${serializeMoviePreferences( profile.favouriteMovies )}.
   `;
     return serializedProfile.trim(); // Trimming to ensure there are no leading/trailing whitespaces
   };
 
-const tysonAIContext = serializeProfileForAIContext(tysonProfile);
+  // Serialize the profile for the AI context
+  const tysonAIContext = serializeProfileForAIContext(tysonProfile);
 
-const contextMessage = {
-  role: "system",
-  content: `You are the personal AI created for Tyson Skakun. Here's what you should know: ${tysonAIContext} When responding to inquiries about Tyson, please provide fun and engaging answers that reflect his personality and professional interests, and try to respond in 2-3 sentences.`,
-};
+  const contextMessage = {
+    role: "system",
+    content: `You are the personal AI created for Tyson Skakun. Here's what you should know: ${tysonAIContext} When responding to inquiries about Tyson, please provide fun and engaging answers that reflect his personality and professional interests, and try to respond in 2-3 sentences.`,
+  };
 
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo-0613",

@@ -33,13 +33,13 @@ export default function Home() {
       />
       <div>
         <h1
-          style={{ fontFamily: "Apple Garamond Light, sans-serif" }}
-          className="z-10 pb-6 text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white/20 via-white to-white/30 cursor-default animate-title font-display sm:text-7xl md:text-9xl lg:text-10xl whitespace-nowrap duration-1000 text-edge-outline"
+          style={{ fontFamily: "Lemon Milk Light, sans-serif" }}
+          className="z-10 pb-6 text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white/30 via-white to-white/10 cursor-default animate-title font-display sm:text-6xl md:text-8xl lg:text-9xl whitespace-nowrap duration-1000 text-edge-outline"
         >
           Tyson Skakun
         </h1>
         <h1
-          style={{ fontFamily: "Nexa Extra Light, sans-serif" }}
+          style={{ fontFamily: "Lemon Milk Light, sans-serif" }}
           className="z-10 pb-4 text-2xl text-transparent text-center bg-clip-text bg-gradient-to-r from-white via-slate-400/80 to-white/20 cursor-default animate-title font-display sm:text-5xl md:text-6xl whitespace-nowrap duration-1000 text-edge-outline"
         >
           Developer
