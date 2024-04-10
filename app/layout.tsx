@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   },
   description: "Co-founder and Developer of tail-adventures.com",
   openGraph: {
-    title: "TysonSkakun1.com",
+    title: "TysonSkakun.dev",
     description: "Co-founder // Developer of TaiL-adventures.com",
-    url: "https://TysonSkakun1.com",
+    url: "https://TysonSkakun.dev",
     siteName: "TysonSkakun1.com",
     images: [
       {
-        url: "https://TysonSkakun1.com/webThumb.png",
+        url: "https://TysonSkakun.dev/webThumb.png",
         width: 1920,
         height: 1080,
       },
