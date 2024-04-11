@@ -8,6 +8,9 @@ dependencies:
   '@tailwindcss/typography':
     specifier: ^0.5.12
     version: 0.5.12(tailwindcss@3.4.3)
+  '@vercel/speed-insights':
+    specifier: ^1.0.10
+    version: 1.0.10(next@14.1.4)(react@18.2.0)(svelte@4.2.12)(vue@3.4.21)
   ai:
     specifier: ^3.0.19
     version: 3.0.19(react@18.2.0)(solid-js@1.8.16)(svelte@4.2.12)(vue@3.4.21)(zod@3.22.4)
@@ -463,6 +466,36 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
+
+  /@vercel/speed-insights@1.0.10(next@14.1.4)(react@18.2.0)(svelte@4.2.12)(vue@3.4.21):
+    resolution: {integrity: sha512-4uzdKB0RW6Ff2FkzshzjZ+RlJfLPxgm/00i0XXgxfMPhwnnsk92YgtqsxT9OcPLdJUyVU1DqFlSWWjIQMPkh0g==}
+    requiresBuild: true
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19
+      svelte: ^4
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
+    dependencies:
+      next: 14.1.4(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      svelte: 4.2.12
+      vue: 3.4.21(typescript@5.4.4)
+    dev: false
 
   /@vue/compiler-core@3.4.21:
     resolution: {integrity: sha512-MjXawxZf2SbZszLPYxaFCjxfibYrzr3eYbKxwpLR9EQN+oaziSu3qKVbwBERj1IFIB8OLUewxB5m/BFzi613og==}

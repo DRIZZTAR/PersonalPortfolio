@@ -2,6 +2,7 @@ import "../globals.css";
 import { Inter, Questrial } from "next/font/google";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: {
@@ -77,6 +78,7 @@ export default function RootLayout({
         }`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
