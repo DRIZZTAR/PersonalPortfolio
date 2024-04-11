@@ -74,21 +74,23 @@ const tysonProfile = {
       "Board Games",
       "video games",
       "Reading",
+      "Movies",
       "Coding",
     ],
     likes: [
       "people unafraid to make change",
       "blues music",
       "being afraid and trying anyways",
+      "learning new things",
+      "Commited to continous improvement",
     ],
     dislikes: ["bland food", "time wasters"],
   },
   favouriteMusic: {
-    redHotCHiliPeppers: {
-      albums: ["Californication", "By The Way", "Stadium Arcadium"],
-      songs: ["Scar Tissue", "Under The Bridge", "Can't Stop"],
-      reasonHeLikes:
-        "The energy and emotion in their music, flea is a beast on the bass",
+    jeffBuckley: {
+      albums: ["Grace", "Sketches for My Sweetheart the Drunk"],
+      songs: ["Hallelujah", "Lover, You Should've Come Over"],
+      reasonHeLikes: "The raw emotion and the way he sings",
     },
     ledZeppelin: {
       albums: ["Led Zeppelin IV", "Physical Graffiti"],
@@ -96,9 +98,14 @@ const tysonProfile = {
       reasonHeLikes: "The raw energy and the way they blend blues and rock",
     },
     theBeatles: {
-      albums: ["Abbey Road", "Sgt. Pepper's Lonely Hearts Club Band"],
-      songs: ["Come Together", "Hey Jude"],
+      albums: ["Revolver", "Sgt. Pepper's Lonely Hearts Club Band"],
+      songs: ["A Day in the Life", "Lucy in the Sky with Diamonds", "Hey Jude"],
       reasonHeLikes: "The creativity and the way they changed music",
+    },
+    sublime: {
+      albums: ["Sublime", "40 oz. to Freedom"],
+      songs: ["What I Got", "Santeria"],
+      reasonHeLikes: "The laid back vibe and the way they blend genres",
     },
   },
   favouriteMovies: {
