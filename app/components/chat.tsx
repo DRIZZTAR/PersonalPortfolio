@@ -71,13 +71,13 @@ const messagesEndRef = useRef<HTMLDivElement>(null);// Create a ref for the last
   }, [messages]); // Dependency array includes messages, so this runs every time messages update
 
   return (
-    <div className="flex flex-col w-full max-w-xl py-4 mx-auto h-screen">
+    <div className="flex flex-col w-full max-w-xl mx-auto h-screen">
       <div className="flex flex-col w-full max-w-xl mx-auto overflow-hidden rounded-lg shadow flex-grow">
         <div
           className="flex-grow flex flex-col justify-center"
           style={{ maxHeight: "calc(100vh - 60px)", overflowY: "auto" }}
         >
-          <div className="px-2 py-2 overflow-y-auto text-3xl font-bold tracking-tight text-zinc-100 sm:text-2xl">
+          <div className="px-2 overflow-y-auto text-3xl font-bold tracking-tight text-zinc-100 sm:text-2xl">
             {messages.map((m) => {
               console.log("Rendering message details:", m);
 
