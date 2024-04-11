@@ -7,12 +7,6 @@ import Particles from "../components/particles";
 
 const socials = [
   {
-    icon: <Twitter size={20} />,
-    href: "https://twitter.com/TysonJeremy",
-    label: "X",
-    handle: "@TysonJeremy",
-  },
-  {
     icon: <Linkedin size={20} />,
     href: "https://www.linkedin.com/in/tyson-skakun-tail",
     label: "LinkedIn",
@@ -23,6 +17,12 @@ const socials = [
     href: "https://github.com/DRIZZTAR",
     label: "Github",
     handle: "TysonSkakun",
+  },
+  {
+    icon: <Twitter size={20} />,
+    href: "https://twitter.com/TysonJeremy",
+    label: "X",
+    handle: "@TysonJeremy",
   },
 ];
 

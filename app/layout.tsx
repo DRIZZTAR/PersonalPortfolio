@@ -5,18 +5,19 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "TysonSkakun1.com",
-    template: "%s | TysonSkakun1.com",
+    default: "TysonSkakun.dev",
+    template: "%s | TysonSkakun.dev",
   },
   description: "Co-founder and Developer of tail-adventures.com",
   openGraph: {
     title: "TysonSkakun.dev",
     description: "Co-founder // Developer of TaiL-adventures.com",
     url: "https://TysonSkakun.dev",
-    siteName: "TysonSkakun1.com",
+    siteName: "TysonSkakun.dev",
     images: [
       {
-        url: "https://TysonSkakun.dev/webThumb.png",
+        url: "https://github.com/DRIZZTAR/PersonalPortfolio/blob/acf180e7e3e2ad668ca4b89cc77c9c3799bca983/public/webThumb.png",
+
         width: 1920,
         height: 1080,
       },

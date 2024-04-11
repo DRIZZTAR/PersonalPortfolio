@@ -9,8 +9,8 @@ import {
 import { MouseEventHandler, PropsWithChildren } from "react";
 
 export const Card: React.FC<PropsWithChildren> = ({ children }) => {
-	const mouseX = useSpring(0, { stiffness: 500, damping: 150 });
-	const mouseY = useSpring(0, { stiffness: 500, damping: 150 });
+	const mouseX = useSpring(0, { stiffness: 1000, damping: 300 });
+	const mouseY = useSpring(0, { stiffness: 1000, damping: 300 });
 
 	function onMouseMove({ currentTarget, clientX, clientY }: any) {
 		const { left, top } = currentTarget.getBoundingClientRect();
