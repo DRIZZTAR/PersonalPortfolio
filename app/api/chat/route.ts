@@ -163,12 +163,12 @@ const tysonProfile = {
       "honesty in tough situations",
       "innovation",
     ],
-    areasForGrowth: ["Balancing work and rest"],
+    areasForGrowth: ["Balancing work and rest", "Nailing the solo in 'Little Wing'"],
   },
   contributions: {
     openSource: true,
     areasOfInterest: [
-      "educational software",
+      "Using AI to create educational software",
       "environmental sustainability",
       "AI",
       "generative UI",
@@ -249,7 +249,8 @@ export async function POST(req: Request) {
         })
         .join(" ");
     };
-
+    
+    // Helper function to serialize movie preferences
     const serializeMoviePreferences = (movies: FavouriteMovies): string => {
       return Object.entries(movies)
         .map(([key, value]) => {
