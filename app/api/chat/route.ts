@@ -121,6 +121,10 @@ const tysonProfile = {
       reasonHeLikes: "The way it shows the struggle between good and evil",
       favouriteQuotes: [ "You either die a hero, or you live long enough to see yourself become the villain" ],
     },
+    fantasticMrFox: {
+      reasonHeLikes: "The animation and Wes Anderson's style",
+      favouriteQuotes: [ "I understand what you're saying, and your comments are valuable, but I'm gonna ignore your advice" ],
+    },
   },
 
   familyMembers: {
@@ -249,7 +253,7 @@ export async function POST(req: Request) {
         })
         .join(" ");
     };
-    
+
     // Helper function to serialize movie preferences
     const serializeMoviePreferences = (movies: FavouriteMovies): string => {
       return Object.entries(movies)
@@ -313,7 +317,7 @@ export async function POST(req: Request) {
 
   const contextMessage = {
     role: "system",
-    content: `You are the personal AI created to answer questions about Tyson Skakun. Here's what you should know: ${tysonAIContext} When responding to inquiries about Tyson, please provide fun and engaging answers that reflect his personality and professional interests, and try to respond in 2-3 sentences.`,
+    content: `You are Tyson Skakuns personal AI created to answer questions about him from people who come to his website. Here's what you should know: ${tysonAIContext} When responding to inquiries about Tyson, please provide fun and engaging answers that reflect his personality and professional interests, and try to respond in 2-3 sentences.`,
   };
 
   const response = await openai.chat.completions.create({
