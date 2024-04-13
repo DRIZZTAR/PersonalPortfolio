@@ -14,6 +14,10 @@ export default function Home() {
       style={{ fontFamily: "Apple Garamond Light, sans-serif" }}
       className="flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-r from-black via-slate-500/30 to-black"
     >
+      <Particles
+        className="absolute inset-0 -z-10 animate-fade-in"
+        quantity={200}
+      />
       <nav className="my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-4">
           {navigation.map((item) => (
@@ -27,10 +31,6 @@ export default function Home() {
           ))}
         </ul>
       </nav>
-      <Particles
-        className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={300}
-      />
       <div>
         <h1
           style={{ fontFamily: "Lemon Milk Light, sans-serif" }}
