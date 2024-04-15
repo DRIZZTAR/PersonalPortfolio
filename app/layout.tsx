@@ -1,7 +1,7 @@
 import "../globals.css";
 import { Inter, Questrial } from "next/font/google";
 import { Metadata } from "next";
-import { Analytics } from "./components/analytics";
+import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
@@ -69,15 +69,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={[inter.variable, questrial.variable].join(" ")}>
-      <head>
-        <Analytics />
-      </head>
+      <head></head>
       <body
         className={`bg-black ${
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
         }`}
       >
         {children}
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
