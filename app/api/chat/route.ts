@@ -24,6 +24,7 @@ interface FavouriteMusic {
 interface Profile {
   personal: {
     names: string[];
+    contactInfo: string[];
     locationsLived: string[];
     characteristics: string[];
     hobbies: string[];
@@ -65,6 +66,10 @@ const tysonProfile = {
       "Tyson Skakun",
       "Tys is what his friends and family call him",
       "Piiderman his current Gamertag",
+    ],
+    contactInfo: [
+      "Tysons email is tysonskakun@gmail.com",
+      "You can reach him on LinkedIn at https://www.linkedin.com/in/tyson-skakun-tail/",
     ],
     locationsLived: ["Currently living in Edmonton, Alberta, Canada"],
     characteristics: ["kind", "driven", "logical", "innovative", "creative"],
@@ -296,6 +301,7 @@ export async function POST(req: Request) {
     )}, and brother-in-law ${
       profile.familyMembers.brotherInLaw
     }. His beloved pet is Simon, a 6-year-old yellow labrador.
+    ${arrayToReadableList(profile.personal.contactInfo)} are ways to contact him.
 
     Professionally, he is a ${
       profile.professional.occupation
@@ -317,7 +323,9 @@ export async function POST(req: Request) {
       profile.career.careerGoals
     )}, with a current focus on his project at www.tail-adventures.com. His musical tastes include ${serializeMusicPreferences(
       profile.favouriteMusic
-    )}. His favourite movies are ${serializeMoviePreferences( profile.favouriteMovies )}.
+    )}. His favourite movies are ${serializeMoviePreferences(
+      profile.favouriteMovies
+    )}.
   `;
     return serializedProfile.trim(); // Trimming to ensure there are no leading/trailing whitespaces
   };
