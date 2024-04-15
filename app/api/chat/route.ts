@@ -111,19 +111,26 @@ const tysonProfile = {
   favouriteMovies: {
     theMatrix: {
       reasonHeLikes: "The way it makes you think about reality",
-      favouriteQuotes: [ "There is no spoon", "I know kung fu" ],
+      favouriteQuotes: ["There is no spoon", "I know kung fu"],
     },
     inception: {
       reasonHeLikes: "The way it plays with your mind",
-      favouriteQuotes: [ "You mustn't be afraid to dream a little bigger, darling", "Dreams feel real while we're in them" ],
+      favouriteQuotes: [
+        "You mustn't be afraid to dream a little bigger, darling",
+        "Dreams feel real while we're in them",
+      ],
     },
     theDarkKnight: {
       reasonHeLikes: "The way it shows the struggle between good and evil",
-      favouriteQuotes: [ "You either die a hero, or you live long enough to see yourself become the villain" ],
+      favouriteQuotes: [
+        "You either die a hero, or you live long enough to see yourself become the villain",
+      ],
     },
     fantasticMrFox: {
       reasonHeLikes: "The animation and Wes Anderson's style",
-      favouriteQuotes: [ "I understand what you're saying, and your comments are valuable, but I'm gonna ignore your advice" ],
+      favouriteQuotes: [
+        "I understand what you're saying, and your comments are valuable, but I'm gonna ignore your advice",
+      ],
     },
   },
 
@@ -167,7 +174,10 @@ const tysonProfile = {
       "honesty in tough situations",
       "innovation",
     ],
-    areasForGrowth: ["Balancing work and rest", "Nailing the solo in 'Little Wing'"],
+    areasForGrowth: [
+      "Balancing work and rest",
+      "Nailing the solo in 'Little Wing'",
+    ],
   },
   contributions: {
     openSource: true,
@@ -181,13 +191,13 @@ const tysonProfile = {
   },
   career: {
     careerGoals: [
-      "to land a job at a company that values creativity and innovation",
+      "find employment with a job at a company that values creativity, innovation, and continous improvement",
       "Share the knowledge I've gained in my career, with juniors",
       "pioneer in interactive user interfaces",
       "build with people who dare to take risks",
     ],
     currentFocus:
-      "building a portfolio that showcases my skills and interests, currently building www.tail-adventures.com",
+      "currently building www.tail-adventures.com which is built using the NEXT.js 14 with APP routing, Stripe, Tailwind, prisma, Redux, Clerk for user authentication, Sanity for content management, the openAI API, and The vercel AI sdk 3.0. TaiL removes the barriers of static storytelling, to generate a  story crafted by you. Based on a users chosen Character, motivations, backstory, TaiL generates your adventure dynamically and is powered by a generative user interface.",
   },
 };
 
