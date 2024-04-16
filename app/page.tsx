@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div
       style={{ fontFamily: "Apple Garamond Light, sans-serif" }}
-      className="flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-r from-black via-slate-500/30 to-black"
+      className="flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-r from-black via-slate-500/20 to-black"
     >
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
