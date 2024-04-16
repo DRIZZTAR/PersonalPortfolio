@@ -56,7 +56,6 @@ const questrial = Questrial({
   weight: "400",
 });
 
-  
 // const calSans = LocalFont({
 //   src: "./fonts/CalSans-SemiBold",
 //   variable: "--font-calsans",
@@ -69,7 +68,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={[inter.variable, questrial.variable].join(" ")}>
-      <head></head>
+      <head>
+        <title>
+          Tyson Skakun | Full Stack Developer & Web Design Specialist in Edmonton
+        </title>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body
         className={`bg-black ${
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
