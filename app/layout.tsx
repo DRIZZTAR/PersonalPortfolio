@@ -6,7 +6,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: {
-    default: "TysonSkakun.dev",
+    default:
+      "Tyson Skakun | Full Stack Developer & AI, UI Specialist in Edmonton",
     template: "%s | TysonSkakun.dev",
   },
   description: "Co-founder and Developer of tail-adventures.com",
@@ -68,12 +69,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={[inter.variable, questrial.variable].join(" ")}>
-      <head>
-        <title>
-          Tyson Skakun | Full Stack Developer & Web Design Specialist in Edmonton
-        </title>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
+      <head></head>
       <body
         className={`bg-black ${
           process.env.NODE_ENV === "development" ? "debug-screens" : undefined
