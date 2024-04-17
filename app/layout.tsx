@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   description: "Co-founder and Developer of tail-adventures.com",
   openGraph: {
     title: "TysonSkakun.dev",
-    description: "Co-founder // Developer of TaiL-adventures.com",
+    description: "Full-Stack Developer // DBuilding TaiL-adventures.com",
     url: "https://TysonSkakun.dev",
     siteName: "TysonSkakun.dev",
     images: [
       {
-        url: "https://github.com/DRIZZTAR/PersonalPortfolio/blob/acf180e7e3e2ad668ca4b89cc77c9c3799bca983/public/webThumb.png",
+        url: "https://tysonskakun.dev/webThumb.png",
 
         width: 1920,
         height: 1080,
@@ -41,7 +41,6 @@ export const metadata: Metadata = {
   twitter: {
     title: "Tyson Skakun",
     card: "summary_large_image",
-    images: ["https://tysonskakun.dev/webThumb.png"],
   },
   icons: {
     shortcut: "/favicon.png",
