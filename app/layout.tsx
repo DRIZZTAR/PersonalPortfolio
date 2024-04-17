@@ -41,6 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Tyson Skakun",
     card: "summary_large_image",
+    images: ["https://tysonskakun.dev/webThumb.png"],
   },
   icons: {
     shortcut: "/favicon.png",
