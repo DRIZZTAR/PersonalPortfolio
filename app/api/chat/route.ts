@@ -137,20 +137,23 @@ const tysonProfile = {
       ],
     },
 
-  theLifeAquatic: {
-    reasonHeLikes: 
-      "The depth of the characters and their development throughout the movie",
-    favouriteQuotes: [
-      "I understand what you're saying, and your comments are valuable, but I'm gonna ignore your advice.",
-      "Son of a bitch, I'm sick of these dolphins.",
-      "Supposedly Cousteau and his cronies invented the idea of putting walkie-talkies into the helmet. But we made ours with a special rabbit ear on the top so we could pipe in some music.",
-      "I've never seen a bond company stooge stick his neck out like that."
-    ]
-  }
-},
+    theLifeAquatic: {
+      reasonHeLikes:
+        "The depth of the characters and their development throughout the movie",
+      favouriteQuotes: [
+        "I understand what you're saying, and your comments are valuable, but I'm gonna ignore your advice.",
+        "Son of a bitch, I'm sick of these dolphins.",
+        "Supposedly Cousteau and his cronies invented the idea of putting walkie-talkies into the helmet. But we made ours with a special rabbit ear on the top so we could pipe in some music.",
+        "I've never seen a bond company stooge stick his neck out like that.",
+      ],
+    },
+  },
 
   familyMembers: {
-    parents: ["Stacey", "Geoff"],
+    parents: [
+      "Stacey is tysons mom, and has two dogs Batfink, and Hugo",
+      "Geoff",
+    ],
     siblings: ["Jordi"],
     wife: ["Katelyn"],
     babyBoy: ["Miles"],
@@ -283,12 +286,12 @@ export async function POST(req: Request) {
     const serializeMoviePreferences = (movies: FavouriteMovies): string => {
       return Object.entries(movies)
         .map(([key, value]) => {
-          return `${key} for the reason ${value.reasonHeLikes} and quotes like ${arrayToReadableList(
-            value.favouriteQuotes
-          )}.`;
+          return `${key} for the reason ${
+            value.reasonHeLikes
+          } and quotes like ${arrayToReadableList(value.favouriteQuotes)}.`;
         })
         .join(" ");
-    }
+    };
 
     // Serialize the profile into a readable format for the AI context
     const serializedProfile = `
@@ -311,7 +314,9 @@ export async function POST(req: Request) {
     )}, and brother-in-law ${
       profile.familyMembers.brotherInLaw
     }. His beloved pet is Simon, a 6-year-old yellow labrador.
-    ${arrayToReadableList(profile.personal.contactInfo)} are ways to contact him.
+    ${arrayToReadableList(
+      profile.personal.contactInfo
+    )} are ways to contact him.
 
     Professionally, he is a ${
       profile.professional.occupation
