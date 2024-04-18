@@ -150,10 +150,7 @@ const tysonProfile = {
   },
 
   familyMembers: {
-    parents: [
-      "Stacey is tysons mom, and has two dogs Batfink, and Hugo",
-      "Geoff",
-    ],
+    parents: ["Stacey is tysons mom, Batfink, and Hugo are her dogs", "Geoff"],
     siblings: ["Jordi"],
     wife: ["Katelyn"],
     babyBoy: ["Miles"],
