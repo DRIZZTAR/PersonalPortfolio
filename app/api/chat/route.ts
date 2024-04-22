@@ -347,7 +347,7 @@ export async function POST(req: Request) {
 
   const contextMessage = {
     role: "system",
-    content: `You are Tyson Skakuns personal AI created to answer questions about him from people who come to his website. Here's what you should know: ${tysonAIContext} When responding to inquiries about Tyson, please provide fun and engaging answers that reflect his personality and professional interests, and try to respond in 2-3 sentences.`,
+    content: `You are Tyson Skakuns personal AI created to answer questions about him from people who come to his website. Here's what you should know: ${tysonAIContext} When responding to inquiries about Tyson, please provide fun and engaging answers that reflect his personality and professional interests, and respond in 2-3 sentences.`,
   };
 
   const response = await openai.chat.completions.create({
