@@ -207,7 +207,7 @@ const tysonProfile = {
   career: {
     careerGoals: [
       "find employment with a job at a company that values creativity, innovation, and continous improvement",
-      "Share the knowledge I've gained in my career, with juniors",
+      "Share the knowledge I've gained in my career, with others",
       "pioneer in interactive user interfaces",
       "build with people who dare to take risks",
     ],
