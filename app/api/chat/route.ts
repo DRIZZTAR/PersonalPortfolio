@@ -167,10 +167,11 @@ const tysonProfile = {
       "Creative problem solving",
       "generative user interface development",
     ],
-    knownProgrammingLanguages: ["Javascript", "Typescript", "Ruby", "Python"],
+    knownProgrammingLanguages: ["Javascript", "Typescript", "Ruby", "Python", "GLSL"],
     knownTechnologies: [
       "React",
       "Next.js",
+      "Three.js",
       "TailwindCSS",
       "Node.js",
       "Express",
