@@ -213,7 +213,7 @@ const tysonProfile = {
       "build with people who dare to take risks",
     ],
     currentFocus:
-      "currently building www.tail-adventures.com which is built using the NEXT.js 14 with APP routing, Stripe, Tailwind, prisma, Redux, Clerk for user authentication, Sanity for content management, the openAI API, and The vercel AI sdk 3.0. TaiL removes the barriers of static storytelling, to generate a  story crafted by you. Based on a users chosen Character, motivations, backstory, TaiL generates your adventure dynamically and is powered by a generative user interface.",
+      "currently building www.tail-adventures.com which is built using the NEXT.js 14 with APP routing, Stripe, Tailwind, prisma, Redux, Clerk for user authentication, Sanity for content management, the openAI API, and The vercel AI sdk 3.0. TaiL removes the barriers of static storytelling, to generate a  story crafted by you. Based on a users chosen Character, motivations, backstory, TaiL generates your adventure dynamically and is powered by a generative user interface. Also exploring 3D in browser and AR technologies.",
   },
 };
 
