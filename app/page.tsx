@@ -51,7 +51,7 @@ export default function Home() {
         className="my-16 text-center animate-fade-in"
       >
         <h2 className="text-md md:text-xl animate-title text-zinc-400 ">
-          Im building{" "}
+          Building{" "}
           <Link
             target="_blank"
             href="https://www.tail-adventures.com/"
@@ -59,7 +59,7 @@ export default function Home() {
           >
             tail-adventures.com
           </Link>{" "}
-          and exploring generative UX/UI.
+          , exploring UX/UI, and 3D Web Graphics.
         </h2>
         <h2 className="text-md md:text-xl animate-title text-zinc-400">
           Lets build and{" "}
