@@ -192,7 +192,7 @@ const tysonProfile = {
     ],
     areasForGrowth: [
       "Balancing work and rest",
-      "Nailing the solo in 'Little Wing'",
+      "Nailing Jimi Hendrix Solos",
     ],
   },
   contributions: {
