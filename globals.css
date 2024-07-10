@@ -3,90 +3,92 @@
 @tailwind utilities;
 
 @layer base {
-  /* Applying text outline for better contrast */
-  .text-edge-outline {
-    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
-  }
+	/* Applying text outline for better contrast */
+	.text-edge-outline {
+		-webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+	}
 }
 
 /* Custom font faces for styling and uniformity */
 @font-face {
-    font-family: 'Nexa Extra Light';
-    src: url('./public/fonts/NexaExtraLight.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+	font-family: 'Nexa Extra Light';
+	src: url('./public/fonts/NexaExtraLight.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Nexa Heavy';
-    src: url('./public/fonts/NexaHeavy.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+	font-family: 'Nexa Heavy';
+	src: url('./public/fonts/NexaHeavy.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Lemon Milk';
-    src: url('./public/fonts/LemonMilk.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+	font-family: 'Lemon Milk';
+	src: url('./public/fonts/LemonMilk.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Lemon Milk Light';
-    src: url('./public/fonts/LemonMilkLight.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+	font-family: 'Lemon Milk Light';
+	src: url('./public/fonts/LemonMilkLight.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Cal Sans';
-    src: url('./public/fonts/CalSans-SemiBold.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
+	font-family: 'Cal Sans';
+	src: url('./public/fonts/CalSans-SemiBold.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Apple Garamond Light';
-    src: url('./public/fonts/AppleGaramond-Light.ttf') format('truetype');
-    font-weight: 300;
+	font-family: 'Apple Garamond Light';
+	src: url('./public/fonts/AppleGaramond-Light.ttf') format('truetype');
+	font-weight: 300;
 }
 
 @font-face {
-    font-family: 'Apple Garamond';
-    src: url('./public/fonts/AppleGaramond.ttf') format('truetype');
-    font-weight: 400;
+	font-family: 'Apple Garamond';
+	src: url('./public/fonts/AppleGaramond.ttf') format('truetype');
+	font-weight: 400;
 }
 
 /* Enhanced scrollbar styling for Webkit browsers */
 .flex-grow::-webkit-scrollbar {
-  width: 8px;
+	width: 8px;
 }
 
 .flex-grow::-webkit-scrollbar-track {
-  background: transparent;
+	background: transparent;
 }
 
 .flex-grow::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(141, 253, 253, 0.11), transparent);
-  border-radius: 4px;
+	background: linear-gradient(180deg, rgba(141, 253, 253, 0.11), transparent);
+	border-radius: 4px;
 }
 
 /* Enhanced scrollbar styling for Mozilla browsers */
 .flex-grow {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(141, 253, 253, 0.11) transparent;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(141, 253, 253, 0.11) transparent;
 }
 
 /* Animations using keyframes for dynamic effects */
 @-webkit-keyframes text-pop-up-top {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    text-shadow: none;
-  }
-  100% {
-    -webkit-transform: translateY(-50px);
-    transform: translateY(-50px);
-    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
-  }
+	0% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		text-shadow: none;
+	}
+	100% {
+		-webkit-transform: translateY(-50px);
+		transform: translateY(-50px);
+		text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc,
+			0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc,
+			0 50px 30px rgba(0, 0, 0, 0.3);
+	}
 }

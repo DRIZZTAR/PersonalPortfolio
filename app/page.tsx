@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
 import Particles from './components/particles';
+import XCard from './components/xcard';
 import Image from 'next/image';
 
 const navigation = [
 	{ name: 'Tysons AI', href: '/aichat' },
+  { name: 'Projects', href: '/projects' },
 	{ name: 'Contact', href: '/contact' },
+
 ];
 
 export default function Home() {
@@ -56,7 +59,7 @@ export default function Home() {
 					>
 						tail-adventures.com
 					</Link>{' '}
-					, exploring UX/UI, and 3D Web Graphics.
+					, aspiring Design Engineer.
 				</h2>
 				<h2 className='text-md md:text-xl text-zinc-400'>
 					Lets build and{' '}

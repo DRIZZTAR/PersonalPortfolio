@@ -3,7 +3,7 @@ import { Navigation } from "../components/nav";
 import Particles from "../components/particles";
 import Chat from "../components/chat";
 
-export default async function ProjectsPage() {
+export default async function ChatPage() {
   return (
     <div className="relative bg-gradient-to-bl from-black via-slate-400/20 to-black">
       <Particles className="absolute inset-0 -z-10" quantity={200} />
