@@ -38,7 +38,7 @@ export default function ProjectsPage() {
 			} finally {
 				setLoading(false);
 				// Small delay to ensure smooth transition
-				setTimeout(() => setShowContent(true), 10);
+				setTimeout(() => setShowContent(true), 100);
 			}
 		};
 
