@@ -38,7 +38,7 @@ const AiResponse: FC<AiResponseProps> = ({ role, content }) => {
             ? "8dbff227-9281-4263-82a3-d2be36924b65/J2XOtqMYxz"
             : "54c729d1-f61f-4c5f-9296-5244ec4dfc82/dsJxsC1XnH"
         }.json`}
-        style={{ width: "80px", height: "80px", border: "none" }}
+        style={{ width: "50px", height: "50px", border: "none" }}
         className="mr-2 flex-shrink-0"
       ></iframe>
       <motion.div
