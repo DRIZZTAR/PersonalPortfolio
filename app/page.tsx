@@ -50,7 +50,7 @@ export default function Home() {
         style={{ fontFamily: "Apple Garamond Light, sans-serif" }}
         className="my-16 text-center animate-fade-in"
       >
-        <h2 className="text-md md:text-xl animate-title text-zinc-400 ">
+        <h2 className="text-md md:text-xl  text-zinc-400 ">
           Building{" "}
           <Link
             target="_blank"
@@ -61,7 +61,7 @@ export default function Home() {
           </Link>{" "}
           , exploring UX/UI, and 3D Web Graphics.
         </h2>
-        <h2 className="text-md md:text-xl animate-title text-zinc-400">
+        <h2 className="text-md md:text-xl text-zinc-400">
           Lets build and{" "}
           <Link
             target="_blank"
