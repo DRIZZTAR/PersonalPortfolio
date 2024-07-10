@@ -18,7 +18,7 @@ const computedFields = {
 
 export const Project = defineDocumentType(() => ({
 	name: "Project",
-	filePathPattern: "./projects/**/*.mdx",
+	filePathPattern: "./aichat/**/*.mdx",
 	contentType: "mdx",
 
 	fields: {
