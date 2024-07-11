@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Navigation } from '../components/nav';
 import Particles from '../components/particles';
 import XCard from '../components/xcard';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const tweetUrls = [
 	'https://twitter.com/TysonJeremy/status/1799305094477054046',
@@ -22,64 +22,80 @@ const tweetUrls = [
 ];
 
 export default function ProjectsPage() {
-	const [loading, setLoading] = useState(true);
-	const [tweets, setTweets] = useState<string[]>([]);
-	const [showContent, setShowContent] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [tweets, setTweets] = useState<string[]>([]);
 
-	useEffect(() => {
-		const fetchTweets = async () => {
-			setLoading(true);
-			try {
-				// Simulate API call with a delay
-				await new Promise(resolve => setTimeout(resolve, 100));
-				setTweets(tweetUrls);
-			} catch (error) {
-				console.error('Error fetching tweets:', error);
-			} finally {
-				setLoading(false);
-				// Small delay to ensure smooth transition
-				setTimeout(() => setShowContent(true), 100);
-			}
-		};
+  useEffect(() => {
+    const fetchTweets = async () => {
+      try {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        setTweets(tweetUrls);
+      } catch (error) {
+        console.error('Error fetching tweets:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-		fetchTweets();
-	}, []);
+    fetchTweets();
+  }, []);
 
-	return (
+  return (
 		<div className='relative bg-gradient-to-bl from-black via-slate-400/20 to-black min-h-screen'>
 			<Particles className='absolute inset-0 -z-10' quantity={100} />
 			<Navigation />
 			<div className='container mx-auto px-4 pt-16'>
-				{loading ? (
-					<LoadingSkeletons />
-				) : (
-					<div
-						className={`grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ${
-							showContent ? 'animate-title' : 'opacity-0'
-						}`}
-					>
-						{tweets.map((url, index) => (
-							<div key={index} className='shadow-lg overflow-hidden rounded-lg'>
-								<XCard tweetUrl={url} theme='dark' />
-							</div>
-						))}
-					</div>
-				)}
+				<AnimatePresence>
+					{loading ? (
+						<LoadingSkeletons />
+					) : (
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							transition={{ duration: 0.5}}
+							className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'
+						>
+							{tweets.map((url, index) => (
+								<motion.div
+									key={index}
+									initial={{ opacity: 0, y: 70 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ delay: index + 0.1}}
+									className='overflow-hidden rounded-lg'
+								>
+									<XCard tweetUrl={url} theme='dark' />
+								</motion.div>
+							))}
+						</motion.div>
+					)}
+				</AnimatePresence>
 			</div>
 		</div>
-	);
+  );
 }
 
 function LoadingSkeletons() {
-	return (
-		<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
-			{[...Array(6)].map((_, index) => (
-				<div key={index} className='bg-gray-800 rounded-lg shadow-lg p-4 animate-pulse'>
-					<div className='h-48 bg-gray-700 rounded-md mb-4'></div>
-					<div className='h-4 bg-gray-700 rounded w-3/4 mb-2'></div>
-					<div className='h-4 bg-gray-700 rounded w-1/2'></div>
-				</div>
-			))}
-		</div>
-	);
+  return (
+    <motion.div
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'
+    >
+      {[...Array(6)].map((_, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1 }}
+          className='bg-gray-800 rounded-lg shadow-lg p-4 animate-pulse'
+        >
+          <div className='h-48 bg-gray-700 rounded-md mb-4'></div>
+          <div className='h-4 bg-gray-700 rounded w-3/4 mb-2'></div>
+          <div className='h-4 bg-gray-700 rounded w-1/2'></div>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
 }
