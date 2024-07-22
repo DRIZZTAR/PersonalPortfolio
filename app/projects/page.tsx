@@ -28,7 +28,7 @@ export default function ProjectsPage() {
   useEffect(() => {
     const fetchTweets = async () => {
       try {
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 1500));
         setTweets(tweetUrls);
       } catch (error) {
         console.error('Error fetching tweets:', error);
@@ -53,15 +53,15 @@ export default function ProjectsPage() {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
-							transition={{ duration: 0.5}}
+							transition={{ duration: 0}}
 							className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'
 						>
 							{tweets.map((url, index) => (
 								<motion.div
 									key={index}
-									initial={{ opacity: 0, y: 70 }}
-									animate={{ opacity: 1, y: 0 }}
-									transition={{ delay: index + 0.1}}
+									initial={{ opacity: 0.2, x: 40, y: 20 }}
+									animate={{ opacity: 1, x: 0, y: 0 }}
+									transition={{delay: index += 0.1}}
 									className='overflow-hidden rounded-lg'
 								>
 									<XCard tweetUrl={url} theme='dark' />
@@ -76,26 +76,34 @@ export default function ProjectsPage() {
 }
 
 function LoadingSkeletons() {
-  return (
-    <motion.div
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'
-    >
-      {[...Array(6)].map((_, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.1 }}
-          className='bg-gray-800 rounded-lg shadow-lg p-4 animate-pulse'
-        >
-          <div className='h-48 bg-gray-700 rounded-md mb-4'></div>
-          <div className='h-4 bg-gray-700 rounded w-3/4 mb-2'></div>
-          <div className='h-4 bg-gray-700 rounded w-1/2'></div>
-        </motion.div>
-      ))}
-    </motion.div>
-  );
+	return (
+		<motion.div
+			initial={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			transition={{ duration: 0.5 }}
+			className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'
+		>
+			{[...Array(tweetUrls.length)].map((_, index) => (
+				<motion.div
+					key={index}
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: index * 0.1 }}
+					className='bg-gray-800 rounded-lg shadow-lg p-4 animate-pulse'
+				>
+					<div className='flex items-center mb-4'>
+						<div className='h-10 w-10 bg-gray-700 rounded-full mr-4'></div>
+						<div>
+							<div className='h-4 bg-gray-700 rounded w-32 mb-2'></div>
+							<div className='h-4 bg-gray-700 rounded w-24'></div>
+						</div>
+					</div>
+					<div className='h-32 bg-gray-700 rounded-md mb-4'></div>
+					<div className='h-4 bg-gray-700 rounded w-full mb-2'></div>
+					<div className='h-4 bg-gray-700 rounded w-5/6 mb-2'></div>
+					<div className='h-4 bg-gray-700 rounded w-3/4'></div>
+				</motion.div>
+			))}
+		</motion.div>
+	);
 }
