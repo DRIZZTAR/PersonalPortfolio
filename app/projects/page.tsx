@@ -59,9 +59,9 @@ export default function ProjectsPage() {
 							{tweets.map((url, index) => (
 								<motion.div
 									key={index}
-									initial={{ opacity: 0.2, x: 40, y: 20 }}
+									initial={{ opacity: 0.2, x: 30, y: 20 }}
 									animate={{ opacity: 1, x: 0, y: 0 }}
-									transition={{delay: index += 0.1}}
+									transition={{delay: index * 0.5}}
 									className='overflow-hidden rounded-lg'
 								>
 									<XCard tweetUrl={url} theme='dark' />
@@ -80,7 +80,7 @@ function LoadingSkeletons() {
 		<motion.div
 			initial={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
-			transition={{ duration: 0.5 }}
+			transition={{ duration: 0.1 }}
 			className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'
 		>
 			{[...Array(tweetUrls.length)].map((_, index) => (
