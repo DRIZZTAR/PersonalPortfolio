@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Welcome to TysonSkakun.dev 👋
 
-## Getting Started
+![Website Banner](https://via.placeholder.com/800x200?text=TysonSkakun.dev)
 
-First, run the development server:
+## 🚀 About Me
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Hey there! I'm Tyson Skakun, a passionate developer and tech enthusiast. This website serves as my digital playground and portfolio, showcasing my projects, skills, and thoughts on all things tech and innovation. Here, you'll find a collection of my work, from interactive 3D experiences and AI-driven applications to my latest experiments and insights in the world of technology. Dive in and explore what drives my passion for creating and problem-solving!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technologies & Tools
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Here are some of the technologies and tools I work with:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![React Three Fiber](https://img.shields.io/badge/-React%20Three%20Fiber-black?style=flat-square&logo=three.js&logoColor=white)
+![Three.js](https://img.shields.io/badge/-Three.js-black?style=flat-square&logo=three.js&logoColor=white)
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white)
+![Prisma](https://img.shields.io/badge/-Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
+![SQL](https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
 
-## Learn More
+## 🏗️ Projects
 
-To learn more about Next.js, take a look at the following resources:
+Check out some of my featured projects:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **TaiL Adventures** - An educational/adventure AI web application that provides immersive and interactive learning experiences.
+2. **MacBook Configurator** - A detailed and customizable 3D model of a MacBook using Three.js and React Three Fiber, featuring interactive controls and realistic lighting.
+3. **PhotoLabs** - A single-page application (SPA) for photo sharing and viewing, designed for seamless and engaging user interactions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+*Visit my [Projects page](https://www.tysonskakun.dev/projects) for more!*
 
-## Deploy on Vercel
+## 📫 Get in Touch
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+I'm always open to interesting conversations and opportunities. Feel free to reach out!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 📧 Email: [tyson_jeremy@hotmail.com](mailto:tyson_jeremy@hotmail.com)
+- 🐦 Twitter: [@TysonJeremy](https://x.com/TysonJeremy)
+- 💼 LinkedIn: [Tyson Skakun](https://linkedin.com/in/tyson-skakun-tail)
+- 🐙 GitHub: [DRIZZTAR](https://github.com/DRIZZTAR)
+
+## 🌟 Fun Fact
+
+Did you know? I once coded for 24 hours straight to win a hackathon! ☕💻
+
+---
+
+© 2024 Tyson Skakun. All rights reserved.
