@@ -225,30 +225,6 @@ const openai = new OpenAI({
 // Set the runtime to edge
 export const runtime = "edge";
 
-// Function definitions:
-// const functions: ChatCompletionCreateParams.Function[] = [
-//   {
-//     name: "get_current_weather",
-//     description: "Get the current weather",
-//     parameters: {
-//       type: "object",
-//       properties: {
-//         location: {
-//           type: "string",
-//           description: "The city and state, e.g. San Francisco, CA",
-//         },
-//         format: {
-//           type: "string",
-//           enum: ["celsius", "fahrenheit"],
-//           description:
-//             "The temperature unit to use. Infer this from the users location.",
-//         },
-//       },
-//       required: ["location", "format"],
-//     },
-//   },
-// ];
-
 // Handle the POST request for the completion route
 export async function POST(req: Request) {
   const { messages } = await req.json();
