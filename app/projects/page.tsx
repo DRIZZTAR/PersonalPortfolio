@@ -1,75 +1,56 @@
 'use client';
 
-import React, {
-	useState,
-	useEffect,
-	lazy,
-	Suspense,
-	useCallback,
-	useMemo,
-} from 'react';
+import React, { Suspense, useState, useEffect, useMemo } from 'react';
 import { Navigation } from '../components/nav';
 
-const Particles = lazy(() => import('../components/particles'));
-const XCard = lazy(() => import('../components/xcard'));
+const Particles = React.lazy(() => import('../components/particles'));
+const XCard = React.lazy(() => import('../components/xcard'));
 
 const tweetUrls = [
 	'https://twitter.com/TysonJeremy/status/1818487260771500039',
 	'https://twitter.com/TysonJeremy/status/1799305094477054046',
-	'https://twitter.com/TysonJeremy/status/1817973848819777890',
+	'https://twitter.com/TysonJeremy/status/1821255883344769407',
 	'https://twitter.com/TysonJeremy/status/1810386385653936215',
 	'https://twitter.com/TysonJeremy/status/1809078125692924132',
 	'https://twitter.com/TysonJeremy/status/1816545216914227670',
+	'https://twitter.com/TysonJeremy/status/1817973848819777890',
 	'https://twitter.com/TysonJeremy/status/1795669324423995418',
 	'https://twitter.com/TysonJeremy/status/1808354043368202359',
 	'https://twitter.com/TysonJeremy/status/1810892631662284940',
-	'https://twitter.com/TysonJeremy/status/1803484767024980409',
 	'https://twitter.com/TysonJeremy/status/1797121650724688047',
 	'https://twitter.com/TysonJeremy/status/1804704053215252943',
 ];
 
 export default function ProjectsPage() {
 	const [loading, setLoading] = useState(true);
-	const [tweets, setTweets] = useState<string[]>([]);
-
-	const fetchTweets = useCallback(async () => {
-		try {
-			setTweets(tweetUrls);
-		} catch (error) {
-			console.error('Error fetching tweets:', error);
-		} finally {
-			setLoading(false);
-		}
-	}, []);
-
-	useEffect(() => {
-		fetchTweets();
-	}, [fetchTweets]);
 
 	const renderedTweets = useMemo(
 		() =>
-			tweets.map((url, index) => (
+			tweetUrls.map((url, index) => (
 				<div key={index} className='overflow-hidden rounded-lg'>
 					<XCard tweetUrl={url} theme='dark' />
 				</div>
 			)),
-		[tweets]
+		[]
 	);
+
+	useEffect(() => {
+		// Simulate loading state transition
+		const timer = setTimeout(() => setLoading(false), 1000); // Adjust timing as needed
+		return () => clearTimeout(timer);
+	}, []);
 
 	return (
 		<div className='relative bg-gradient-to-bl from-black via-slate-400/20 to-black min-h-screen'>
-			<Suspense fallback={<div>Loading particles...</div>}>
-				<Particles className='absolute inset-0 -z-10' quantity={100} />
-			</Suspense>
+			<Particles className='absolute inset-0 -z-10' quantity={100} />
 			<Navigation />
 			<div className='container mx-auto px-4 pt-16'>
-				{loading ? (
-					<LoadingSkeletons />
-				) : (
+				{loading ? <LoadingSkeletons /> : null}
+				<Suspense fallback={<div />}>
 					<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
 						{renderedTweets}
 					</div>
-				)}
+				</Suspense>
 			</div>
 		</div>
 	);
