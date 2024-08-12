@@ -13,12 +13,9 @@ const tweetUrls = [
 	'https://twitter.com/TysonJeremy/status/1810386385653936215',
 	'https://twitter.com/TysonJeremy/status/1809078125692924132',
 	'https://twitter.com/TysonJeremy/status/1816545216914227670',
-	'https://twitter.com/TysonJeremy/status/1817973848819777890',
 	'https://twitter.com/TysonJeremy/status/1795669324423995418',
 	'https://twitter.com/TysonJeremy/status/1808354043368202359',
-	'https://twitter.com/TysonJeremy/status/1810892631662284940',
 	'https://twitter.com/TysonJeremy/status/1797121650724688047',
-	'https://twitter.com/TysonJeremy/status/1804704053215252943',
 ];
 
 export default function ProjectsPage() {
@@ -59,7 +56,7 @@ export default function ProjectsPage() {
 function LoadingSkeletons() {
 	return (
 		<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
-			{[...Array(tweetUrls.length)].map((_, index) => (
+			{[...Array(tweetUrls.length + 6)].map((_, index) => (
 				<div
 					key={index}
 					className='bg-gray-800 rounded-lg shadow-lg p-4 animate-pulse'
