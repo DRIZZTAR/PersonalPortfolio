@@ -58,7 +58,7 @@ export default function Home() {
 						className='underline duration-500 hover:text-zinc-300'
 					>
 						tail-adventures.com
-					</Link>{' '}
+					</Link>
 					, aspiring Design Engineer.
 				</h2>
 				<h2 className='text-md md:text-xl text-zinc-400'>
