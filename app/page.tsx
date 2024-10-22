@@ -54,14 +54,15 @@ export default function Home() {
 					Developer
 				</h1>
 			</div>
-			<div
+			{/* <div
 				style={{
 					userSelect: 'none',
+					touchAction: 'none',
 				}}
-				className=' mt-16 -z-9 flex justify-center items-center w-4/4 animate-fade-in'
+				className='mt-16 -z-9 flex justify-center items-center w-full md:w-4/4 animate-title'
 			>
 				<ThreeScene />
-			</div>
+			</div> */}
 			<div
 				style={{ fontFamily: 'Apple Garamond Light, sans-serif' }}
 				className='my-16 text-center animate-fade-in'

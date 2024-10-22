@@ -74,7 +74,7 @@ export default function ThreeScene() {
 		<Canvas camera={{ fov: 45 }}>
 			<Environment preset='studio' />
 
-			<group position={[0, -0.5, 0]} scale={1.5}>
+			<group position={[0, -0.5, 0]} scale={3}>
 				{/* Centered Pyramid - Medium speed */}
 				<Pyramid
 					position={[0, 0.5, 0.5]}
