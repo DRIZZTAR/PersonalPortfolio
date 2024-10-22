@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
 import Particles from './components/particles';
+import ThreeScene from './components/homepageCanvas';
 import XCard from './components/xcard';
 import Image from 'next/image';
 
 const navigation = [
 	{ name: 'Tysons AI', href: '/aichat' },
-  { name: 'Projects', href: '/projects' },
+	{ name: 'Projects', href: '/projects' },
 	{ name: 'Contact', href: '/contact' },
-
 ];
 
 export default function Home() {
@@ -17,7 +17,10 @@ export default function Home() {
 			style={{ fontFamily: 'Apple Garamond Light, sans-serif' }}
 			className='flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-r from-black via-slate-500/20 to-black'
 		>
-			<Particles className='absolute inset-0 -z-10 animate-fade-in' quantity={200} />
+			<Particles
+				className='absolute inset-0 -z-10 animate-fade-in'
+				quantity={200}
+			/>
 			<nav className='my-16 animate-fade-in'>
 				<ul className='flex items-center justify-center gap-4'>
 					{navigation.map(item => (
@@ -33,19 +36,32 @@ export default function Home() {
 			</nav>
 			<div>
 				<h1
-					style={{ fontFamily: 'Lemon Milk Light, sans-serif' }}
+					style={{
+						fontFamily: 'Lemon Milk Light, sans-serif',
+						userSelect: 'none',
+					}}
 					className='z-10 pb-6 text-5xl text-transparent bg-clip-text bg-gradient-to-r from-white/30 via-white to-white/10 cursor-default animate-title font-display sm:text-6xl md:text-8xl lg:text-9xl whitespace-nowrap duration-1000 text-edge-outline'
 				>
 					Tyson Skakun
 				</h1>
 				<h1
-					style={{ fontFamily: 'Lemon Milk Light, sans-serif' }}
+					style={{
+						fontFamily: 'Lemon Milk Light, sans-serif',
+						userSelect: 'none',
+					}}
 					className='z-10 pb-4 text-2xl text-transparent text-center bg-clip-text bg-gradient-to-r from-white via-slate-400/80 to-white/20 cursor-default animate-title font-display sm:text-5xl md:text-6xl whitespace-nowrap duration-1000 text-edge-outline'
 				>
 					Developer
 				</h1>
 			</div>
-			<div className='hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0' />
+			<div
+				style={{
+					userSelect: 'none',
+				}}
+				className=' mt-16 -z-9 flex justify-center items-center w-4/4 animate-fade-in'
+			>
+				<ThreeScene />
+			</div>
 			<div
 				style={{ fontFamily: 'Apple Garamond Light, sans-serif' }}
 				className='my-16 text-center animate-fade-in'
