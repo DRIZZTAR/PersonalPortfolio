@@ -7,14 +7,14 @@ const Particles = React.lazy(() => import('../components/particles'));
 const XCard = React.lazy(() => import('../components/xcard'));
 
 const tweetUrls = [
+	'https://twitter.com/TysonJeremy/status/1847119911337988104',
+	'https://twitter.com/TysonJeremy/status/1839739315322232892',
 	'https://twitter.com/TysonJeremy/status/1818487260771500039',
 	'https://twitter.com/TysonJeremy/status/1799305094477054046',
 	'https://twitter.com/TysonJeremy/status/1821255883344769407',
-	'https://twitter.com/TysonJeremy/status/1810386385653936215',
 	'https://twitter.com/TysonJeremy/status/1809078125692924132',
 	'https://twitter.com/TysonJeremy/status/1816545216914227670',
 	'https://twitter.com/TysonJeremy/status/1795669324423995418',
-	'https://twitter.com/TysonJeremy/status/1808354043368202359',
 	'https://twitter.com/TysonJeremy/status/1797121650724688047',
 ];
 
@@ -55,12 +55,9 @@ export default function ProjectsPage() {
 
 function LoadingSkeletons() {
 	return (
-		<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+		<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr'>
 			{[...Array(tweetUrls.length + 6)].map((_, index) => (
-				<div
-					key={index}
-					className='bg-gray-800 rounded-lg shadow-lg p-4 animate-pulse'
-				>
+				<div key={index} className='bg-gray-800 rounded-lg shadow-lg p-4 animate-pulse'>
 					<div className='flex items-center mb-4'>
 						<div className='h-10 w-10 bg-gray-700 rounded-full mr-4'></div>
 						<div>

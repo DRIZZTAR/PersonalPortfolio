@@ -17,10 +17,7 @@ export default function Home() {
 			style={{ fontFamily: 'Apple Garamond Light, sans-serif' }}
 			className='flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-r from-black via-slate-500/20 to-black'
 		>
-			<Particles
-				className='absolute inset-0 -z-10 animate-fade-in'
-				quantity={200}
-			/>
+			<Particles className='absolute inset-0 -z-10 animate-fade-in' quantity={200} />
 			<nav className='my-16 animate-fade-in'>
 				<ul className='flex items-center justify-center gap-4'>
 					{navigation.map(item => (
@@ -76,10 +73,17 @@ export default function Home() {
 					>
 						tail-adventures.com
 					</Link>
-					, aspiring Design Engineer.
+					, and{' '}
+					<Link
+						target='_blank'
+						href='https://www.id8r.com/'
+						className='underline duration-500 hover:text-zinc-300'
+					>
+						ID8R.com
+					</Link>{' '}
 				</h2>
 				<h2 className='text-md md:text-xl text-zinc-400'>
-					Lets build and{' '}
+					Looking for new Projects{' '}
 					<Link
 						target='_blank'
 						href='https://www.linkedin.com/in/tyson-skakun-tail/'
