@@ -8,7 +8,7 @@ import Image from 'next/image';
 const navigation = [
 	{ name: 'Tysons AI', href: '/aichat' },
 	{ name: 'Projects', href: '/projects' },
-	{ name: 'Contact', href: '/contact' },
+	{ name: 'Links', href: '/contact' },
 ];
 
 export default function Home() {
@@ -17,7 +17,10 @@ export default function Home() {
 			style={{ fontFamily: 'Apple Garamond Light, sans-serif' }}
 			className='flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-r from-black via-slate-500/20 to-black'
 		>
-			<Particles className='absolute inset-0 -z-10 animate-fade-in' quantity={200} />
+			<Particles
+				className='absolute inset-0 -z-10 animate-fade-in'
+				quantity={200}
+			/>
 			<nav className='my-16 animate-fade-in'>
 				<ul className='flex items-center justify-center gap-4'>
 					{navigation.map(item => (
@@ -65,15 +68,15 @@ export default function Home() {
 				className='my-16 text-center animate-fade-in'
 			>
 				<h2 className='text-md md:text-xl  text-zinc-400 '>
-					Building{' '}
+					Current Project{' '}
 					<Link
 						target='_blank'
-						href='https://www.tail-adventures.com/'
+						href='https://fraimed.vercel.app/'
 						className='underline duration-500 hover:text-zinc-300'
 					>
-						tail-adventures.com
+						fraimed.vercel.app
 					</Link>
-					, and{' '}
+					, and building with{' '}
 					<Link
 						target='_blank'
 						href='https://www.id8r.com/'

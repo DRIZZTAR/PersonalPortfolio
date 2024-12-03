@@ -33,7 +33,7 @@ export const Navigation: React.FC = () => {
 							href='/aichat'
 							className='duration-200 text-zinc-400 hover:text-zinc-100'
 						>
-							Chat With Tysons AI
+							Tysons AI
 						</Link>
 						<Link
 							href='/projects'
