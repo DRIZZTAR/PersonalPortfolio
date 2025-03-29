@@ -86,7 +86,7 @@ export default function Home() {
 					</Link>{' '}
 				</h2>
 				<h2 className='text-md md:text-xl text-zinc-400'>
-					Looking for new Projects{' '}
+					Looking for new opportunities{' '}
 					<Link
 						target='_blank'
 						href='https://www.linkedin.com/in/tyson-skakun-tail/'

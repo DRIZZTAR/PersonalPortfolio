@@ -7,16 +7,17 @@ const Particles = React.lazy(() => import('../components/particles'));
 const XCard = React.lazy(() => import('../components/xcard'));
 
 const tweetUrls = [
+	'https://twitter.com/TysonJeremy/status/1903316872613032259',
+	'https://twitter.com/TysonJeremy/status/1904751069088952723',
 	'https://twitter.com/TysonJeremy/status/1863067785695502667',
 	'https://twitter.com/TysonJeremy/status/1855863300531322958',
-	'https://twitter.com/TysonJeremy/status/1818487260771500039',
+	'https://twitter.com/TysonJeremy/status/1901848441694589162',
 	'https://twitter.com/TysonJeremy/status/1847119911337988104',
-	'https://twitter.com/TysonJeremy/status/1839739315322232892',
+	'https://twitter.com/TysonJeremy/status/1818487260771500039',
+	'https://twitter.com/TysonJeremy/status/1898238630814269600',
 	'https://twitter.com/TysonJeremy/status/1799305094477054046',
-	'https://twitter.com/TysonJeremy/status/1821255883344769407',
-	'https://twitter.com/TysonJeremy/status/1795669324423995418',
-	'https://twitter.com/TysonJeremy/status/1797121650724688047',
 ];
+
 
 export default function ProjectsPage() {
 	const [loading, setLoading] = useState(true);
