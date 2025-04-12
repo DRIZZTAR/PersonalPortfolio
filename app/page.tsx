@@ -79,10 +79,10 @@ export default function Home() {
 					, and building with{' '}
 					<Link
 						target='_blank'
-						href='https://www.id8r.com/'
+						href='https://www.create.xyz'
 						className='underline duration-500 hover:text-zinc-300'
 					>
-						ID8R.com
+						Create.xyz
 					</Link>{' '}
 				</h2>
 				<h2 className='text-md md:text-xl text-zinc-400'>
