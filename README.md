@@ -39,7 +39,7 @@ I'm always open to interesting conversations and opportunities. Feel free to rea
 
 - 📧 Email: [tyson_jeremy@hotmail.com](mailto:tyson_jeremy@hotmail.com)
 - 🐦 Twitter: [@TysonJeremy](https://x.com/TysonJeremy)
-- 💼 LinkedIn: [Tyson Skakun](https://linkedin.com/in/tyson-skakun-tail)
+- 💼 LinkedIn: [Tyson Skakun](https://linkedin.com/in/tyson-skakun)
 - 🐙 GitHub: [DRIZZTAR](https://github.com/DRIZZTAR)
 
 ## 🌟 Fun Fact

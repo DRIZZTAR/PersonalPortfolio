@@ -69,7 +69,7 @@ const tysonProfile = {
 		],
 		contactInfo: [
 			'Tysons email is tysonskakun@gmail.com',
-			'You can reach him on LinkedIn at https://www.linkedin.com/in/tyson-skakun-tail/',
+			'You can reach him on LinkedIn at https://www.linkedin.com/in/tyson-skakun/',
 		],
 		locationsLived: ['Currently living in Edmonton, Alberta, Canada'],
 		characteristics: [

@@ -89,7 +89,7 @@ export default function Home() {
 					Looking for new opportunities{' '}
 					<Link
 						target='_blank'
-						href='https://www.linkedin.com/in/tyson-skakun-tail/'
+						href='https://www.linkedin.com/in/tyson-skakun'
 						className='underline duration-500 hover:text-zinc-300'
 					>
 						Connect

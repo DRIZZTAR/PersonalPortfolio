@@ -8,7 +8,7 @@ import Particles from '../components/particles';
 const socials = [
 	{
 		icon: <Linkedin size={20} />,
-		href: 'https://www.linkedin.com/in/tyson-skakun-tail',
+		href: 'https://www.linkedin.com/in/tyson-skakun',
 		label: 'LinkedIn',
 		handle: 'TysonSkakun',
 	},
