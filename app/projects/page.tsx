@@ -14,7 +14,7 @@ const tweetUrls = [
 	'https://twitter.com/TysonJeremy/status/1901848441694589162',
 	'https://twitter.com/TysonJeremy/status/1847119911337988104',
 	'https://twitter.com/TysonJeremy/status/1818487260771500039',
-	'https://twitter.com/TysonJeremy/status/1898238630814269600',
+	'https://twitter.com/TysonJeremy/status/1942778757439447090',
 	'https://twitter.com/TysonJeremy/status/1799305094477054046',
 ];
 
